@@ -16,19 +16,26 @@ function triggerAnimations() {
 function animateHero() {
     if (typeof gsap !== 'undefined') {
         const tlHero = gsap.timeline();
-        tlHero.to('.hero-content .mask-in', {
-            y: 0,
-            duration: 1.0,
-            stagger: 0.15,
-            ease: 'power4.out'
-        });
-        tlHero.to('.hero-content .fade-up', {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out'
-        }, 0.3);
+        tlHero.fromTo('.hero-content .mask-in', 
+            { y: '100%' },
+            {
+                y: '0%',
+                duration: 1.0,
+                stagger: 0.15,
+                ease: 'power4.out'
+            }
+        );
+        tlHero.fromTo('.hero-content .fade-up', 
+            { opacity: 0, y: 20 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: 'power3.out'
+            }, 
+            0.3
+        );
     } else {
         // Fallback in case GSAP fails to load
         document.querySelectorAll('.mask-in').forEach(el => {
@@ -51,9 +58,6 @@ if (cinematicPreloader && typeof gsap !== 'undefined') {
             cinematicPreloader.style.display = 'none';
             document.body.style.overflow = '';
             
-            // Trigger hero animations after preloader finishes
-            animateHero();
-            
             // Initialize main scroll reveals after preloader finishes
             triggerAnimations();
         }
@@ -68,7 +72,9 @@ if (cinematicPreloader && typeof gsap !== 'undefined') {
       // 4. Tagline slides up
       .to('.cinematic-tagline', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.4)
       // 5. Entire fullscreen container fades to transparent revealing website
-      .to(cinematicPreloader, { opacity: 0, duration: 0.4, ease: 'power2.inOut', delay: 0.2 });
+      .to(cinematicPreloader, { opacity: 0, duration: 0.4, ease: 'power2.inOut', delay: 0.2 })
+      // Trigger hero animations right as the preloader starts to fade out (staggered crossfade)
+      .call(animateHero, null, "-=0.6");
 } else {
     // If no preloader or GSAP not present, trigger immediately
     if (cinematicPreloader) cinematicPreloader.style.display = 'none';
