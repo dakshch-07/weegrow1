@@ -229,7 +229,7 @@ function initMockupCarousel() {
                     mockup.style.boxShadow = themes[nextTheme];
                 }
             }, 400);
-        }, 5000);
+        }, 1600);
     }
 
     function stopCarousel() {
