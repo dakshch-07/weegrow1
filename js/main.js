@@ -16,30 +16,47 @@ function triggerAnimations() {
 function animateHero() {
     if (typeof gsap !== 'undefined') {
         const tlHero = gsap.timeline();
-        tlHero.fromTo('.hero-content .mask-in', 
-            { y: '100%' },
-            {
-                y: '0%',
-                duration: 1.0,
-                stagger: 0.15,
-                ease: 'power4.out'
+        
+        // 1. Animate small hero label
+        tlHero.fromTo('.hero-label', 
+            { y: '100%', opacity: 0 },
+            { 
+                y: '0%', 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: 'power3.out' 
             }
         );
+        
+        // 2. Animate main h1 lines smoothly (line-by-line)
+        tlHero.fromTo('.hero-h1 .mask-in', 
+            { y: '110%' },
+            {
+                y: '0%',
+                duration: 1.2,
+                stagger: 0.18,
+                ease: 'power4.out'
+            },
+            "-=0.6" // overlapping start
+        );
+        
+        // 3. Fade in subtitle and cta buttons
         tlHero.fromTo('.hero-content .fade-up', 
-            { opacity: 0, y: 20 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
-                stagger: 0.15,
+                duration: 1.0,
+                stagger: 0.2,
                 ease: 'power3.out'
             }, 
-            0.3
+            "-=0.8" // overlapping start
         );
     } else {
         // Fallback in case GSAP fails to load
         document.querySelectorAll('.mask-in').forEach(el => {
             el.style.transform = 'translateY(0)';
+            el.style.opacity = '1';
         });
         document.querySelectorAll('.fade-up').forEach(el => {
             el.style.opacity = '1';
