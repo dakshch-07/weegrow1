@@ -2,21 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
 
-    let csrfToken = '';
+    // Web3Forms Access Key - Get a free key from https://web3forms.com/
+    const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
 
-    // Fetch CSRF token dynamically on load
-    async function fetchCSRF() {
-        try {
-            const res = await fetch('php/csrf.php', { credentials: 'include' });
-            const data = await res.json();
-            if (data && data.csrf_token) {
-                csrfToken = data.csrf_token;
-            }
-        } catch (e) {
-            console.warn('Failed to load CSRF token:', e);
-        }
-    }
-    fetchCSRF();
 
     const toastContainer = document.createElement('div');
     toastContainer.id = 'toast-container';
@@ -96,13 +84,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if(btnText) btnText.innerText = 'Sending...';
 
         try {
-            const response = await fetch('php/contact.php', {
+            // Append access_key for Web3Forms
+            const requestData = {
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: `New Lead from WeeGROW (${formData.name})`,
+                from_name: "WeeGROW Website",
+                ...formData
+            };
+
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-Token': csrfToken
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(requestData)
             });
 
             const result = await response.json();
