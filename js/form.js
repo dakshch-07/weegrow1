@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!contactForm) return;
 
     // Web3Forms Access Key - Get a free key from https://web3forms.com/
-    const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+    const WEB3FORMS_ACCESS_KEY = 'fc26fffc-67e9-43f0-b946-865bedb0cf9c';
 
 
     const toastContainer = document.createElement('div');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toast.className = 'toast';
         toast.innerText = message;
         toastContainer.appendChild(toast);
-        
+
         setTimeout(() => {
             toast.style.opacity = '0';
             toast.style.transform = 'translateX(100%)';
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         let isValid = true;
         const formData = {
             name: contactForm.name.value.trim(),
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) setError('email', 'Valid email is required');
         if (formData.phone && !/^[0-9\-\+\s]{7,15}$/.test(formData.phone)) setError('phone', 'Invalid phone number');
         if (!formData.message || formData.message.length < 10) setError('message', 'Message must be at least 10 characters');
-        
+
         // GDPR Validation
         if (!formData.privacy_consent) {
             setError('privacy_consent', 'You must consent to privacy guidelines to submit');
@@ -78,10 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const spinner = submitBtn.querySelector('.spinner');
         const btnText = submitBtn.querySelector('.btn-text');
-        
+
         submitBtn.disabled = true;
-        if(spinner) spinner.style.display = 'inline-block';
-        if(btnText) btnText.innerText = 'Sending...';
+        if (spinner) spinner.style.display = 'inline-block';
+        if (btnText) btnText.innerText = 'Sending...';
 
         try {
             // Append access_key for Web3Forms
@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             if (submitBtn.disabled === true) {
                 submitBtn.disabled = false;
-                if(spinner) spinner.style.display = 'none';
-                if(btnText) btnText.innerText = 'Send Message';
+                if (spinner) spinner.style.display = 'none';
+                if (btnText) btnText.innerText = 'Send Message';
             }
         }
     });
