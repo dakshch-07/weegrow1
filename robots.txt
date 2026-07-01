@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /php/
+Disallow: /admin.php
+Disallow: /.env
+
+Sitemap: https://weegrow.in/sitemap.xml

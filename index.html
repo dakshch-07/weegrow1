@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeeGROW | Premium Web Design & SEO for Any Business Ready to Grow Online</title>
+    <meta name="description" content="Affordable, custom, mobile-ready websites for e-commerce, startups, retail shops, salons, clinics, and any business ready to grow online. Starting at ₹2,999.">
+    <link rel="canonical" href="https://weegrow.in/">
+    <meta property="og:title" content="WeeGROW | Premium Web Design & SEO for Any Business Ready to Grow Online">
+    <meta property="og:description" content="Affordable, custom, mobile-ready websites for e-commerce, startups, retail shops, salons, clinics, and any business ready to grow online. Starting at ₹2,999.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weegrow.in/">
+    <meta property="og:image" content="https://weegrow.in/assets/og_preview.webp">
+    
+    <!-- X (Twitter) Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WeeGROW | Premium Web Design & SEO for Any Business Ready to Grow Online">
+    <meta name="twitter:description" content="Affordable, custom, mobile-ready websites for e-commerce, startups, retail shops, salons, clinics, and any business ready to grow online. Starting at ₹2,999.">
+    <meta name="twitter:image" content="https://weegrow.in/assets/og_preview.webp">
+
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+    
+    <!-- Local Business SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "WeeGROW Digital Growth Partner",
+      "image": "https://weegrow.in/assets/weegrow_logo_v2.webp",
+      "url": "https://weegrow.in/",
+      "telephone": "+918828965062",
+      "email": "grow@weegrow.in",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "MH",
+        "postalCode": "400058",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      },
+      "sameAs": [
+        "https://www.instagram.com/weegrow.in"
+      ]
+    }
+    </script>
+    
+    <!-- Inline Cinematic Preloader CSS (Cache-Proof) -->
+    <style>
+    #wg-cinematic-preloader {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: #040914; z-index: 999999;
+        display: flex; justify-content: center; align-items: center; flex-direction: column;
+    }
+    .cinematic-light-bloom {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 400px; height: 400px;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, transparent 60%);
+        opacity: 0; pointer-events: none;
+    }
+    .cinematic-logo-container {
+        position: relative; z-index: 2; opacity: 0; transform: scale(0.9); text-align: center;
+    }
+    .cinematic-logo-container .logo-text {
+        font-family: 'Plus Jakarta Sans', sans-serif; font-size: 46px; font-weight: 600; color: #ffffff; letter-spacing: -0.04em;
+    }
+    .cinematic-logo-container .blue-grow {
+        background: linear-gradient(135deg, #00e5ff, #0077ff); 
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+    }
+    .cinematic-tagline {
+        font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase;
+        letter-spacing: 0.35em; color: rgba(255, 255, 255, 0.7); margin-top: 14px;
+        opacity: 0; transform: translateY(15px);
+    }
+    .cinematic-progress {
+        position: absolute; bottom: 0; left: 0; height: 4px;
+        background: linear-gradient(90deg, #00e5ff, #0077ff); width: 0%;
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Cinematic Fullscreen Preloader -->
+    <div id="wg-cinematic-preloader">
+        <div class="cinematic-light-bloom"></div>
+        <div class="cinematic-logo-container">
+            <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+            <div class="cinematic-tagline">Secure Web Solutions</div>
+        </div>
+        <div class="cinematic-progress"></div>
+    </div>
+
+<canvas id="particles-canvas"></canvas>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-wrapper">
+                <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+                <div class="logo-subtitle">Secure Web Solutions for Modern Business</div>
+            </div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html" class="scramble">Home</a></li>
+            <li><a href="services.html" class="scramble">Services</a></li>
+            <li><a href="packages.html" class="scramble">Packages</a></li>
+            <li><a href="about.html" class="scramble">About</a></li>
+            <li><a href="contact.html" class="scramble">Contact</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <!-- REPLACE: swap 918828965062 with the real WhatsApp number -->
+            <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Us &rarr;</a>
+        </div>
+        
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay">
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <!-- REPLACE: swap 918828965062 with the real WhatsApp number -->
+        <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Us &rarr;</a>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="mask-container">
+                <p class="hero-label mask-in" style="animation-delay: 0s">🚀 Premium Web Solutions</p>
+            </div>
+            <h1 class="hero-h1">
+                <span class="mask-container"><span class="mask-in" style="animation-delay: 0.1s">We build websites</span></span>
+                <span class="mask-container"><span class="mask-in" style="animation-delay: 0.2s">that <span class="gradient-text">convert visitors</span></span></span>
+                <span class="mask-container"><span class="mask-in" style="animation-delay: 0.3s">into customers.</span></span>
+            </h1>
+            <p class="hero-subtitle fade-up" style="animation-delay: 0.4s">Custom-built, mobile-first websites designed to grow your business. From local shops to scaling brands — we deliver results.</p>
+            <div class="hero-cta fade-up" style="animation-delay: 0.5s">
+                <a href="#contact" class="btn btn-primary btn-magnetic">Start Your Project →</a>
+                <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
+            </div>
+        </div>
+        <div class="hero-visual" id="heroVisual">
+            <div class="browser-mockup" id="browserMockup">
+                <div class="browser-bar">
+                    <div class="browser-dot"></div>
+                    <div class="browser-dot"></div>
+                    <div class="browser-dot"></div>
+                    <div class="browser-url" id="browserMockupUrl">weegrow.in</div>
+                </div>
+                <div class="mockup-carousel">
+                    <!-- Slide 1: WeeGROW (Current sleek SaaS UI) -->
+                    <div class="mockup-slide active" data-url="weegrow.in" data-theme="dark-saas">
+                        <div class="mockup-glass">
+                            <div class="mockup-header">
+                                <div class="mockup-logo"></div>
+                                <div class="mockup-nav">
+                                    <div class="mockup-nav-item"></div>
+                                    <div class="mockup-nav-item"></div>
+                                    <div class="mockup-nav-item"></div>
+                                </div>
+                            </div>
+                            <div class="mockup-hero">
+                                <div class="mockup-title"></div>
+                                <div class="mockup-subtitle"></div>
+                                <div class="mockup-btn"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mockup-card"></div>
+                                <div class="mockup-card"></div>
+                                <div class="mockup-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Mansoor Studio (High contrast urban light theme) -->
+                    <div class="mockup-slide" data-url="mansoorstudio.com" data-theme="urban-light">
+                        <div class="mockup-urban">
+                            <div class="urban-split">
+                                <div class="urban-left">
+                                    <span class="urban-mini-lbl">EST. 06</span>
+                                    <h2 class="urban-mini-h2">MANSOOR<br><span class="grey">STUDIO</span></h2>
+                                    <p class="urban-mini-p">Modern Grooming Culture.</p>
+                                    <div class="urban-mini-btn">Book Now</div>
+                                </div>
+                                <div class="urban-right" style="background-image: url('assets/mansoor_hero.webp');"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Lakme Salon (Elegant Rose-Gold Luxury) -->
+                    <div class="mockup-slide" data-url="lakmesalon.in" data-theme="rose-gold">
+                        <div class="mockup-luxury">
+                            <div class="luxury-overlay" style="background-image: url('assets/lakme_hero.webp');">
+                                <div class="luxury-glass">
+                                    <h2 class="luxury-mini-h2">LAKME</h2>
+                                    <p class="luxury-mini-subtitle">Signature Premium Salon</p>
+                                    <div class="luxury-mini-btn">Explore Beauty</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-stats">
+                <div class="stat-card float-1"><span class="stat-icon">⭐</span> 4.9 Client Rating</div>
+                <div class="stat-card float-2"><span class="stat-icon">🚀</span> +250% Growth</div>
+                <div class="stat-card float-3"><span class="stat-icon">⚡</span> Lightning Fast</div>
+                <div class="stat-card float-4"><span class="stat-icon">📱</span> Mobile Optimized</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="trust-bar">
+    <div class="marquee-content" aria-hidden="true">
+        <span class="marquee-item">🍽 Restaurants</span>
+        <span class="marquee-item">💇 Salons & Spas</span>
+        <span class="marquee-item">🏪 Retail Shops</span>
+        <span class="marquee-item">🏋 Gyms & Studios</span>
+        <span class="marquee-item">🏥 Clinics</span>
+        <span class="marquee-item">🔧 Home Services</span>
+        <span class="marquee-item">⭐ 50+ Happy Clients</span>
+        <span class="marquee-item">🚀 Sites Live in 7 Days</span>
+        <span class="marquee-item">💰 Starting ₹5,000</span>
+        <span class="marquee-item">📱 Mobile-First Design</span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">🍽 Restaurants</span>
+        <span class="marquee-item">💇 Salons & Spas</span>
+        <span class="marquee-item">🏪 Retail Shops</span>
+        <span class="marquee-item">🏋 Gyms & Studios</span>
+        <span class="marquee-item">🏥 Clinics</span>
+        <span class="marquee-item">🔧 Home Services</span>
+        <span class="marquee-item">⭐ 50+ Happy Clients</span>
+        <span class="marquee-item">🚀 Sites Live in 7 Days</span>
+        <span class="marquee-item">💰 Starting ₹5,000</span>
+        <span class="marquee-item">📱 Mobile-First Design</span>
+    </div>
+</div>
+
+<section id="services">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Our Services</span>
+            <h2>Everything Your Business Needs to <span class="gradient-text">Grow Online</span></h2>
+            <p>From your first website to full digital marketing — we handle it all, so you focus on running your business.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="card service-card card-featured reveal card-tilt" data-delay="100">
+                <span class="badge scramble-text">Most Popular</span>
+                <div class="icon-placeholder">🌐</div>
+                <h3>A Website That Works While You Sleep</h3>
+                <p>Custom-built, mobile-first websites optimised for Google and designed to turn visitors into customers. No templates, no drag-and-drop.</p>
+                <span class="service-tags scramble-text">HTML/CSS · SEO Ready · Mobile First · Fast Delivery</span>
+                <!-- REPLACE: swap 918828965062 with the real WhatsApp number -->
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20am%20interested%20in%20Website%20Development." class="service-link" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+            </div>
+            
+            <div class="card service-card reveal card-tilt" data-delay="200">
+                <div class="icon-placeholder">💬</div>
+                <h3>Sell on WhatsApp — Your Customers Are Already There</h3>
+                <p>A complete WhatsApp catalogue with product listings, pricing, and order flow. Perfect for restaurants, home bakers, and retail shops.</p>
+                <span class="service-tags">Product Catalogue · Order Flow · Setup</span>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20am%20interested%20in%20WhatsApp%20E-Commerce." class="service-link" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+            </div>
+            
+            <div class="card service-card reveal" data-delay="300">
+                <div class="icon-placeholder">🔍</div>
+                <h3>Show Up When Customers Search for You</h3>
+                <p>On-page SEO, Google Business Profile setup, and local keyword optimisation so people in your area find you first.</p>
+                <span class="service-tags">Local SEO · Keywords · Ranking</span>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20am%20interested%20in%20SEO." class="service-link" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+            </div>
+            
+            <div class="card service-card reveal" data-delay="400">
+                <div class="icon-placeholder">📍</div>
+                <h3>Get Found on Google Maps — For Free</h3>
+                <p>Full GMB setup and optimisation: photos, hours, categories, Q&A, and review management.</p>
+                <span class="service-tags">GMB Setup · Maps · Reviews</span>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20am%20interested%20in%20GMB%20Setup." class="service-link" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+            </div>
+            
+            <div class="card service-card reveal" data-delay="500">
+                <div class="icon-placeholder">🎨</div>
+                <h3>Look Like the Best Business on the Block</h3>
+                <p>Logo, colour palette, fonts, and brand guidelines that make your business look polished and trustworthy.</p>
+                <span class="service-tags">Logo · Colors · Brand Identity</span>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20am%20interested%20in%20Branding." class="service-link" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+            </div>
+            
+            <div class="card service-card reveal" data-delay="600">
+                <div class="icon-placeholder">📱</div>
+                <h3>Get More Footfall With Targeted Local Ads</h3>
+                <p>Meta and Google ad campaigns designed for local area targeting — reach customers within 5km of your shop.</p>
+                <span class="service-tags">Meta Ads · Google Ads · Local Reach</span>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20am%20interested%20in%20Ads." class="service-link" target="_blank" rel="noopener noreferrer">Get a Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="packages">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Pricing</span>
+            <h2>Simple, Honest <span class="gradient-text">Pricing</span></h2>
+            <p>All packages include free consultation, revisions, and 1-year basic support.</p>
+        </div>
+
+        <div class="pricing-toggle-wrapper reveal" data-delay="50">
+            <span id="label-one-time" class="toggle-label active">One-Time Billing</span>
+            <label class="pricing-switch">
+                <input type="checkbox" id="pricing-toggle-checkbox">
+                <span class="pricing-slider"></span>
+            </label>
+            <span id="label-installments" class="toggle-label">Installment Pricing</span>
+        </div>
+        
+        <div class="packages-grid">
+            <div class="card package-card reveal" data-delay="100">
+                <h3>STARTER</h3>
+                <div class="package-price" data-price-onetime="₹2,999" data-price-installments="₹1,500 x 2">₹2,999</div>
+                <div class="price-subtext">one-time payment</div>
+                <div class="package-best">Best for: Solopreneurs, coaches, home businesses going online first time</div>
+                <ul class="package-features">
+                    <li class="feat-yes">1-Page Custom Landing Site</li>
+                    <li class="feat-yes">Contact Form & WhatsApp</li>
+                    <li class="feat-yes">Basic SEO Setup</li>
+                    <li class="feat-yes">Google Maps Embed</li>
+                    <li class="feat-no">5-Page Custom Site</li>
+                    <li class="feat-no">Google Business Profile (GMB)</li>
+                    <li class="feat-no">WhatsApp Store & Checkout</li>
+                    <li class="feat-yes" style="font-weight: 600; color: var(--color-cyan) !important;">Timeline: 5–7 Business Days</li>
+                </ul>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20want%20the%20Starter%20Package." class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp to Start &rarr;</a>
+            </div>
+            
+            <div class="card package-card card-featured reveal" data-delay="200">
+                <span class="badge">Most Popular</span>
+                <h3>GROWTH</h3>
+                <div class="package-price" data-price-onetime="₹7,999" data-price-installments="₹4,000 x 2">₹7,999</div>
+                <div class="price-subtext">one-time payment</div>
+                <div class="package-best">Best for: Restaurants, salons, clinics, retail shops</div>
+                <ul class="package-features">
+                    <li class="feat-yes">5-Page Custom Website</li>
+                    <li class="feat-yes">Full On-Page SEO</li>
+                    <li class="feat-yes">Google Business Profile Setup</li>
+                    <li class="feat-yes">WhatsApp & Social Integration</li>
+                    <li class="feat-yes">Interactive Photo Gallery</li>
+                    <li class="feat-yes">1-Year Technical Support</li>
+                    <li class="feat-no">WhatsApp Store & Order Flow</li>
+                    <li class="feat-yes" style="font-weight: 600; color: var(--color-cyan) !important;">Timeline: 10–14 Business Days</li>
+                </ul>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20want%20the%20Growth%20Website%20Package." class="btn btn-primary" target="_blank" rel="noopener noreferrer">WhatsApp to Start &rarr;</a>
+            </div>
+            
+            <div class="card package-card reveal" data-delay="300">
+                <h3>SCALE</h3>
+                <div class="package-price" data-price-onetime="₹14,999" data-price-installments="₹7,500 x 2">₹14,999</div>
+                <div class="price-subtext">one-time payment</div>
+                <div class="package-best">Best for: Local stores, boutiques, home bakeries wanting online orders</div>
+                <ul class="package-features">
+                    <li class="feat-yes">Everything in Growth</li>
+                    <li class="feat-yes">WhatsApp Store & Order Flow</li>
+                    <li class="feat-yes">Full Google Business Setup</li>
+                    <li class="feat-yes">Brand Identity Basics</li>
+                    <li class="feat-yes">Social Setup (2 Platforms)</li>
+                    <li class="feat-yes">Local SEO & Keywords</li>
+                    <li class="feat-no">Ads Setup & Management</li>
+                    <li class="feat-yes" style="font-weight: 600; color: var(--color-cyan) !important;">Timeline: 18–21 Business Days</li>
+                </ul>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20want%20the%20Scale%20WhatsApp%20Store%20Package." class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp to Start &rarr;</a>
+            </div>
+            
+            <div class="card package-card reveal" data-delay="400">
+                <h3>PREMIUM</h3>
+                <div class="package-price" data-price-onetime="₹24,999" data-price-installments="₹12,500 x 2">₹24,999</div>
+                <div class="price-subtext">one-time payment</div>
+                <div class="package-best">Best for: Established businesses ready to dominate local searches</div>
+                <ul class="package-features">
+                    <li class="feat-yes">Everything in Scale</li>
+                    <li class="feat-yes">Full Brand Identity Kit</li>
+                    <li class="feat-yes">Local Ads Setup & Campaigns</li>
+                    <li class="feat-yes">1-Month Ads Management</li>
+                    <li class="feat-yes">Double Design Revisions</li>
+                    <li class="feat-yes">Monthly Performance Report</li>
+                    <li class="feat-yes">Priority Founder Support</li>
+                    <li class="feat-yes" style="font-weight: 600; color: var(--color-cyan) !important;">Timeline: 21–28 Business Days</li>
+                </ul>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20want%20the%20Premium%20Digital%20Package." class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp to Start &rarr;</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: var(--space-xl);" class="reveal" data-delay="500">
+            <p>Need something custom? <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20need%20a%20custom%20solution." class="service-link" target="_blank" rel="noopener noreferrer">Tell us what you need</a></p>
+        </div>
+    </div>
+</section>
+
+<section id="how-we-work" style="background-color: var(--color-bg-alt);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Our Process</span>
+            <h2>How We Get You <span class="gradient-text">Online — Fast</span></h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card reveal" data-delay="100">
+                <h3>Free Call (Day 1)</h3>
+                <p>Tell us about your business, your customers, and what you want. We'll suggest the right package — no hard sell.</p>
+            </div>
+            <div class="step-card reveal" data-delay="200">
+                <h3>We Build It (Days 2–14)</h3>
+                <p>Our team designs and builds your website or digital setup. You see a preview before we go live — revisions included.</p>
+            </div>
+            <div class="step-card reveal" data-delay="300">
+                <h3>You Go Live (Day 14–21)</h3>
+                <p>We launch your website, set up your Google Business profile, and hand everything over with a clear guide. You're live.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Portfolio</span>
+            <h2>Projects That <span class="gradient-text">Deliver Results</span></h2>
+            <p>Our portfolio is growing. Here's the kind of work we build — realistic, fast, and mobile-ready.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="card portfolio-card reveal card-tilt" data-delay="100">
+                <div class="portfolio-visual">
+                    <img src="assets/restaurant.webp" alt="Spice Route">
+                    <button class="portfolio-overlay" aria-haspopup="dialog" data-title="Spice Route — Andheri" data-category="Restaurant Website" data-image="assets/restaurant.webp" data-timeline="10 Business Days" data-tech="HTML5, CSS3 Grid, Vanilla JS, GMB" data-description="Spice Route is a high-end restaurant in Andheri that needed an online presence to showcase their menu and drive dinner table reservations. We designed a custom 5-page fast-loading site, integrated an interactive menu, and set up Google Business Profile. Within 3 months, online reservations increased by 40%.">View Details &rarr;</button>
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-cat">Restaurant Website</span>
+                    <h3>Spice Route — Andheri</h3>
+                    <p style="margin-bottom:0; font-size: 14px;">5-Page Website · GMB Setup</p>
+                </div>
+            </div>
+            <div class="card portfolio-card reveal card-tilt" data-delay="200">
+                <div class="portfolio-visual">
+                    <img src="assets/salon.webp" alt="Glamour Studio">
+                    <button class="portfolio-overlay" aria-haspopup="dialog" data-title="Glamour Studio — Bandra" data-category="Salon Website" data-image="assets/salon.webp" data-timeline="10 Business Days" data-tech="HTML5, HSL CSS, WhatsApp API, Local SEO" data-description="Glamour Studio is a trendy salon in Bandra that was looking for a way to let clients view styling services and book appointments directly. We built a gorgeous custom website with an integrated WhatsApp appointment scheduler. They now receive over 20 automatic new bookings every single month directly from Google Searches.">View Details &rarr;</button>
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-cat">Salon Website</span>
+                    <h3>Glamour Studio — Bandra</h3>
+                    <p style="margin-bottom:0; font-size: 14px;">Booking Page · WhatsApp Button</p>
+                </div>
+            </div>
+            <div class="card portfolio-card reveal card-tilt" data-delay="300">
+                <div class="portfolio-visual">
+                    <img src="assets/bakery.webp" alt="Home Bakes">
+                    <button class="portfolio-overlay" aria-haspopup="dialog" data-title="Home Bakes by Priya — Thane" data-category="WhatsApp Store" data-image="assets/bakery.webp" data-timeline="14 Business Days" data-tech="Vanilla JS Cart, CSS Glassmorphism, WhatsApp API" data-description="Priya's artisan home bakery in Thane wanted a clean, budget-friendly way to display her customized cake menu and capture orders without paying high marketplace commissions. We built a custom WhatsApp Storefront featuring a dynamic catalog checkout cart. Orders are sent directly to Priya's WhatsApp chat with all details populated.">View Details &rarr;</button>
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-cat">WhatsApp Store</span>
+                    <h3>Home Bakes by Priya — Thane</h3>
+                    <p style="margin-bottom:0; font-size: 14px;">Product Catalog · Order Flow</p>
+                </div>
+            </div>
+            <div class="card portfolio-card reveal card-tilt" data-delay="400">
+                <div class="portfolio-visual">
+                    <img src="assets/retail.webp" alt="Mehta Garments">
+                    <button class="portfolio-overlay" aria-haspopup="dialog" data-title="Mehta Garments — Dadar" data-category="Retail Website" data-image="assets/retail.webp" data-timeline="10 Business Days" data-tech="CSS Flexbox, JS Lightbox, Local SEO, Schema.org" data-description="Mehta Garments is a traditional clothing boutique in Dadar. They needed an online catalog to display their latest festival collections to customers before they walk into the physical store. We crafted a highly interactive photo gallery and contact form, resulting in a 50% increase in store footfall during the holiday season.">View Details &rarr;</button>
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-cat">Retail Website</span>
+                    <h3>Mehta Garments — Dadar</h3>
+                    <p style="margin-bottom:0; font-size: 14px;">Gallery · Contact Form</p>
+                </div>
+            </div>
+            <div class="card portfolio-card reveal card-tilt" data-delay="500">
+                <div class="portfolio-visual">
+                    <img src="assets/gmb.webp" alt="QuickFix Plumbing">
+                    <button class="portfolio-overlay" aria-haspopup="dialog" data-title="QuickFix Plumbing — Borivali" data-category="GMB Setup" data-image="assets/gmb.webp" data-timeline="5 Business Days" data-tech="Google Business Optimization, Local Citation Setup, SEO" data-description="QuickFix is a local home service provider in Borivali. They had no online presence and were struggling to compete with big listing websites. We fully optimized their Google Business Profile, set up local citation profiles, and designed a custom fast-loading Google Maps localized capture funnel. They now rank top 3 in local searches.">View Details &rarr;</button>
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-cat">GMB Setup</span>
+                    <h3>QuickFix Plumbing — Borivali</h3>
+                    <p style="margin-bottom:0; font-size: 14px;">Maps · Reviews · Photos</p>
+                </div>
+            </div>
+            <div class="card portfolio-card reveal card-tilt" data-delay="600">
+                <div class="portfolio-visual">
+                    <img src="assets/gym.webp" alt="FitPeak Gym">
+                    <button class="portfolio-overlay" aria-haspopup="dialog" data-title="FitPeak Gym — Malad" data-category="Gym Website" data-image="assets/gym.webp" data-timeline="10 Business Days" data-tech="HTML5, CSS Transitions, JS Forms, SEO Schema" data-description="FitPeak Gym in Malad wanted a premium, highly energetic website to showcase their membership plans, daily workout schedules, and capture high-intent membership leads. We designed a modern dark-mode site with smooth custom micro-animations, pricing tables, and interactive lead forms. Lead conversions boosted by 35% in month one.">View Details &rarr;</button>
+                </div>
+                <div class="portfolio-content">
+                    <span class="portfolio-cat">Gym Website</span>
+                    <h3>FitPeak Gym — Malad</h3>
+                    <p style="margin-bottom:0; font-size: 14px;">Pricing · Schedule · Enquiry Form</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" style="background-color: var(--color-bg-alt);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Testimonials</span>
+            <h2>What Our <span class="gradient-text">Clients Say</span></h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="card reveal" data-delay="100">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Before WeeGROW, nobody could find our salon online. Within 6 weeks of launching, we were getting 20+ new bookings a month just from Google."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"><img src="assets/priya_nair.webp" alt="Priya Nair"></div>
+                    <div class="author-info">
+                        <h4>Priya Nair</h4>
+                        <p>Glamour Studio, Bandra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-delay="200">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"We were sceptical about spending money on a website, but the Growth Package (₹7,999) paid for itself in 3 months. Our online orders doubled."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"><img src="assets/ramesh_patel.webp" alt="Ramesh Patel"></div>
+                    <div class="author-info">
+                        <h4>Ramesh Patel</h4>
+                        <p>Spice Route Restaurant, Andheri</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-delay="300">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"The WeeGROW Team is not just composed of developers — they explain everything in simple language, understand our business needs, and actually care about your real-world results. Highly recommend."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"><img src="assets/sunita_sharma.webp" alt="Sunita Sharma"></div>
+                    <div class="author-info">
+                        <h4>Sunita Sharma</h4>
+                        <p>Home Bakes, Thane</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why-us">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Why Us</span>
+            <h2>Why Businesses <span class="gradient-text">Choose Us</span></h2>
+        </div>
+        <div class="packages-grid">
+            <div class="card reveal" data-delay="100">
+                <h3>Built for Any Business Ready to Grow</h3>
+                <p>We work with any business ready to establish a premium online presence — including e-commerce storefronts, startups, professional service practitioners, and NGOs. We know what gets results.</p>
+            </div>
+            <div class="card reveal" data-delay="200">
+                <h3>Affordable — No Hidden Costs</h3>
+                <p>Packages start at ₹2,999. The price you see is exactly what you pay. No markups, no hidden renewals, and no surprise annual maintenance fees.</p>
+            </div>
+            <div class="card reveal" data-delay="300">
+                <h3>Delivered on Schedule</h3>
+                <p>Your website is delivered on schedule with realistic timelines and clear project milestones. We focus on professional execution and robust engineering.</p>
+            </div>
+            <div class="card reveal" data-delay="400">
+                <h3>Direct Founder Attention</h3>
+                <p>Our founding partners handle strategy, coding, and delivery personally. You get direct support via WhatsApp and phone from the people building your business.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" style="background-color: var(--color-bg-alt);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">FAQ</span>
+            <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        </div>
+        <div class="faq-list reveal" data-delay="100">
+            <div class="faq-item active">
+                <button class="faq-question" aria-expanded="true">How much does a website cost?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Our packages start at ₹2,999 for a single-page landing site and go up to ₹24,999 for our premium digital package. The price you see is exactly what you pay — no hidden charges, and you can also opt for our convenient installment split-payment option.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How long does it take to build my website?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        A Starter landing page is delivered in 5–7 business days. A Growth multi-page website takes 10–14 business days, while our advanced Scale and Premium packages take 18–28 business days. We deliver on schedule with clear milestones.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Will my website show up on Google?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Every website we build includes proper, standards-compliant on-page SEO setup. For our Growth, Scale, and Premium packages, we also include a fully optimized Google My Business (GMB) profile setup to help you dominate local area Google Maps results.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">I am not tech-savvy. Will I be able to manage it?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes, absolutely. We hand over every project with clean documentations. Furthermore, we are always one WhatsApp chat away. We provide 1 year of support with our packages so you never feel stranded.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Do I need to provide the content and photos?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        We will guide you on what we need — usually just basic info about your business and your logo (if you have one). We write the professional copy and curate premium visual assets for you.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">What happens if I am not happy with the design?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        All packages include revision cycles before we push to live servers. We share a high-end design preview first and only move to development once you're fully satisfied.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Contact</span>
+            <h2>Ready to <span class="gradient-text">Get Started?</span></h2>
+            <p>Drop us a message and we will call you back within a few hours. Or just WhatsApp us — we respond faster there.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="reveal" data-delay="100">
+                <div id="formSuccess" class="form-success">
+                    Thanks! We'll WhatsApp you within a few hours. 🙌
+                </div>
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="business_type">Business Type</label>
+                        <select id="business_type" name="business_type">
+                            <option value="">Select an option</option>
+                            <option value="Restaurant">Restaurant</option>
+                            <option value="Salon & Spa">Salon & Spa</option>
+                            <option value="Retail Shop">Retail Shop</option>
+                            <option value="Gym & Fitness">Gym & Fitness</option>
+                            <option value="Clinic">Clinic</option>
+                            <option value="Home Services">Home Services</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Package Interested In</label>
+                        <select id="package" name="package">
+                            <option value="">Select an option</option>
+                            <option value="Not sure">Not sure yet</option>
+                            <option value="Starter ₹2,999">Starter Landing Page (₹2,999)</option>
+                            <option value="Growth ₹7,999">Growth Website (₹7,999)</option>
+                            <option value="Scale ₹14,999">Scale Package (₹14,999)</option>
+                            <option value="Premium ₹24,999">Premium Package (₹24,999)</option>
+                            <option value="Custom">Custom Solution</option>
+                        </select>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="form-group checkbox-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: var(--space-md);">
+                        <input type="checkbox" id="privacy_consent" name="privacy_consent" required style="width: auto; margin-top: 4px;">
+                        <label for="privacy_consent" style="font-size: 14px; opacity: 0.85; cursor: pointer; user-select: none;">
+                            I consent to WeeGROW storing my contact details to follow up on my enquiry in accordance with their privacy guidelines.
+                        </label>
+                        <div class="error-msg"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Send Message</span>
+                    </button>
+                </form>
+            </div>
+            <div class="contact-sidebar reveal" data-delay="200">
+                <div class="contact-item">
+                    <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="btn btn-whatsapp" style="width:100%;" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                </div>
+                <div class="contact-item" style="margin-top: 30px;">
+                    <h4>Email</h4>
+                    <p><a href="mailto:grow@weegrow.in">grow@weegrow.in</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+918828965062">+91 88289 65062 / +91 88796 81085</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>Based in Mumbai, serving businesses across India.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-col">
+        <a href="index.html" class="logo">
+            <div class="logo-wrapper">
+                <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+                <div class="logo-subtitle">Secure Web Solutions for Modern Business</div>
+            </div>
+        </a>
+            <p style="margin-top: 10px;">Affordable Websites for Any Business Ready to Grow Online.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+                <li><a href="services.html">Website Development</a></li>
+                <li><a href="services.html">WhatsApp E-Commerce</a></li>
+                <li><a href="services.html">SEO & Google Ranking</a></li>
+                <li><a href="services.html">Google My Business Setup</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+                <li><a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+                <li><a href="mailto:grow@weegrow.in">grow@weegrow.in</a></li>
+                <li><a href="tel:+918828965062">+91 88289 65062 / +91 88796 81085</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2025 WeeGROW · Founded by Harshad Chopra & Daksh Chopra · Mumbai, India<br>Made with ❤ for any business ready to grow online</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Glassmorphic Portfolio Lightbox Modal -->
+<div id="portfolioModal" class="portfolio-modal">
+    <div class="portfolio-modal-content">
+        <button class="portfolio-modal-close" id="modalCloseBtn">&times;</button>
+        <div class="portfolio-modal-media" id="modalMedia"></div>
+        <div class="portfolio-modal-body">
+            <span class="portfolio-modal-cat" id="modalCat">Category</span>
+            <h3 class="portfolio-modal-title" id="modalTitle">Project Title</h3>
+            <p class="portfolio-modal-desc" id="modalDesc">Detailed description...</p>
+            <div class="portfolio-modal-meta">
+                <span class="portfolio-modal-meta-item" id="modalTimeline">Timeline</span>
+                <span class="portfolio-modal-meta-item" id="modalTech">Tech Stack</span>
+            </div>
+            <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!" class="btn btn-primary" id="modalWhatsAppBtn" target="_blank" rel="noopener noreferrer">Discuss Similar Project &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="floating-wa" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button id="backToTop" class="back-to-top" aria-label="Scroll to top">↑</button>
+
+<!-- GSAP Animation Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="js/main.js" type="module"></script>
+<script src="js/form.js" type="module"></script>
+
+<!-- Modern Realistic Inertia Scroll (Lenis) -->
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<script>
+  // Initialize modern inertia smooth scroll
+  window.lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    smoothTouch: false,
+  });
+  
+  function raf(time) {
+    window.lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  
+  // Add scroll binding to custom anchor links for perfect scrolling integration
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if(targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        window.lenis.scrollTo(targetEl, {
+          offset: -80, // Avoid navbar overlapping
+          immediate: false
+        });
+      }
+    });
+  });
+
+  // Portfolio Modal Functionality
+  const modal = document.getElementById('portfolioModal');
+  const closeBtn = document.getElementById('modalCloseBtn');
+  const modalMedia = document.getElementById('modalMedia');
+  const modalCat = document.getElementById('modalCat');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalTimeline = document.getElementById('modalTimeline');
+  const modalTech = document.getElementById('modalTech');
+  const modalWhatsAppBtn = document.getElementById('modalWhatsAppBtn');
+  let lastActiveElement = null;
+
+  const focusableElementsString = 'button, [href], input, select, textarea, [tabindex="0"]';
+
+  document.querySelectorAll('.portfolio-overlay').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          lastActiveElement = document.activeElement;
+          
+          const title = this.getAttribute('data-title');
+          const category = this.getAttribute('data-category');
+          const image = this.getAttribute('data-image');
+          const timeline = this.getAttribute('data-timeline');
+          const tech = this.getAttribute('data-tech');
+          const desc = this.getAttribute('data-description');
+
+          modalTitle.textContent = title;
+          modalCat.textContent = category;
+          modalMedia.style.backgroundImage = `url('${image}')`;
+          modalDesc.textContent = desc;
+          modalTimeline.textContent = `Timeline: ${timeline}`;
+          modalTech.textContent = `Tech Stack: ${tech}`;
+          modalWhatsAppBtn.href = `https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20am%20interested%20in%20a%20project%20similar%20to%20${encodeURIComponent(title)}.`;
+
+          modal.style.display = 'flex';
+          setTimeout(() => {
+              modal.classList.add('active');
+              if (closeBtn) closeBtn.focus();
+          }, 10);
+      });
+  });
+
+  const closeModal = () => {
+      modal.classList.remove('active');
+      setTimeout(() => {
+          modal.style.display = 'none';
+          if (lastActiveElement) lastActiveElement.focus();
+      }, 400);
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (modal) {
+      modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+      });
+      modal.addEventListener('keydown', function(e) {
+          if (e.key === 'Tab') {
+              const focusableElements = modal.querySelectorAll(focusableElementsString);
+              const firstFocusable = focusableElements[0];
+              const lastFocusable = focusableElements[focusableElements.length - 1];
+              
+              if (e.shiftKey) { // Shift + Tab
+                  if (document.activeElement === firstFocusable) {
+                      lastFocusable.focus();
+                      e.preventDefault();
+                  }
+              } else { // Tab
+                  if (document.activeElement === lastFocusable) {
+                      firstFocusable.focus();
+                      e.preventDefault();
+                  }
+              }
+          } else if (e.key === 'Escape') {
+              closeModal();
+          }
+      });
+  }
+
+  // Pricing Toggle Functionality
+  const toggleCheckbox = document.getElementById('pricing-toggle-checkbox');
+  const labelOneTime = document.getElementById('label-one-time');
+  const labelInstallments = document.getElementById('label-installments');
+  const priceElements = document.querySelectorAll('.package-price');
+
+  if (toggleCheckbox) {
+      // Enforce default OFF
+      toggleCheckbox.checked = false;
+
+      toggleCheckbox.addEventListener('change', function() {
+          const isInstallments = this.checked;
+          
+          if (isInstallments) {
+              labelOneTime.classList.remove('active');
+              labelInstallments.classList.add('active');
+          } else {
+              labelOneTime.classList.add('active');
+              labelInstallments.classList.remove('active');
+          }
+
+          priceElements.forEach(priceEl => {
+              const onetime = priceEl.getAttribute('data-price-onetime');
+              const installments = priceEl.getAttribute('data-price-installments');
+              const sub = priceEl.nextElementSibling;
+              
+              if (isInstallments) {
+                  priceEl.textContent = installments;
+                  priceEl.style.fontSize = '24px';
+                  if (sub && sub.classList.contains('price-subtext')) {
+                      sub.textContent = 'split into 2 parts';
+                  }
+              } else {
+                  priceEl.textContent = onetime;
+                  priceEl.style.fontSize = '';
+                  if (sub && sub.classList.contains('price-subtext')) {
+                      sub.textContent = 'one-time payment';
+                  }
+              }
+          });
+      });
+  }
+</script>
+</body>
+</html>

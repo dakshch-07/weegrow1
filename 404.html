@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | WeeGROW Mumbai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0B0F19;
+            --color-accent: #5B5FFF;
+            --color-cyan: #00E5FF;
+            --color-text: #FFFFFF;
+            --color-text-muted: #B4B8C5;
+            --gradient-accent: linear-gradient(135deg, #5B5FFF, #00E5FF);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(91, 95, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(0, 229, 255, 0.1), transparent 40%);
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 30px rgba(91, 95, 255, 0.05);
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -0.05em;
+            position: relative;
+        }
+        
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) scale(1.05);
+            z-index: -1;
+            opacity: 0.15;
+            filter: blur(8px);
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+        }
+        
+        p {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 12px;
+            background: var(--gradient-accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 20px rgba(91, 95, 255, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 229, 255, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Lost in the Digital Space?</h1>
+        <p>The page you are looking for has either been moved, deleted, or never existed in the first place. Let's get your business back on the growth track.</p>
+        <a href="index.html" class="btn">Return to Homepage &rarr;</a>
+    </div>
+</body>
+</html>

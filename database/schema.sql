@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS webgrowth_leads (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  phone VARCHAR(20),
+  business_type VARCHAR(50),
+  package VARCHAR(50),
+  message TEXT NOT NULL,
+  ip_address VARCHAR(64),
+  submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS webgrowth_rate_limits (
+  ip_hash VARCHAR(64) PRIMARY KEY,
+  attempts INT NOT NULL DEFAULT 1,
+  last_attempt INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS webgrowth_admin (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

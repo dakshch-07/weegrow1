@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | WeeGROW Mumbai</title>
+    <meta name="description"
+        content="Get in touch with WeeGROW for affordable web design and digital marketing in Mumbai. Fill out the form or WhatsApp us.">
+    <link rel="canonical" href="https://weegrow.in/contact.html">
+    <meta property="og:title" content="Contact Us | WeeGROW Mumbai">
+    <meta property="og:description"
+        content="Get in touch with WeeGROW for affordable web design and digital marketing in Mumbai. Fill out the form or WhatsApp us.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weegrow.in/contact.html">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-wrapper">
+                    <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+                    <div class="logo-subtitle">Secure Web Solutions for Modern Business</div>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="btn btn-whatsapp" target="_blank"
+                    rel="noopener noreferrer">WhatsApp Us &rarr;</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="btn btn-whatsapp" target="_blank"
+                rel="noopener noreferrer">WhatsApp Us &rarr;</a>
+        </div>
+    </div>
+
+    <header class="hero" style="min-height: 50vh; padding-top: 120px; align-items: flex-start;">
+        <div class="container" style="text-align: center;">
+            <h1 class="hero-h1 reveal">Let's Get Your Business Online — Start With a Free Conversation</h1>
+            <p class="reveal" data-delay="100">Drop your details below, or just hit the WhatsApp button for a faster
+                reply.</p>
+        </div>
+    </header>
+
+    <section id="contact-full" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="reveal" data-delay="100">
+                    <div class="card" style="padding: var(--space-lg);">
+                        <div id="formSuccess" class="form-success">
+                            Thanks! We'll WhatsApp you within a few hours. 🙌
+                        </div>
+                        <form id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="business_type">Business Type</label>
+                                <select id="business_type" name="business_type">
+                                    <option value="">Select an option</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Salon & Spa">Salon & Spa</option>
+                                    <option value="Retail Shop">Retail Shop</option>
+                                    <option value="Gym & Fitness">Gym & Fitness</option>
+                                    <option value="Clinic">Clinic</option>
+                                    <option value="Home Services">Home Services</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Package Interested In</label>
+                                <select id="package" name="package">
+                                    <option value="">Select an option</option>
+                                    <option value="Not sure">Not sure yet</option>
+                                    <option value="Starter ₹2,999">Starter Landing Page (₹2,999)</option>
+                                    <option value="Growth ₹7,999">Growth Website (₹7,999)</option>
+                                    <option value="Scale ₹14,999">Scale Package (₹14,999)</option>
+                                    <option value="Premium ₹24,999">Premium Package (₹24,999)</option>
+                                    <option value="Custom">Custom Solution</option>
+                                </select>
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    placeholder="Tell us about your business and what you're looking for..."></textarea>
+                                <div class="error-msg"></div>
+                            </div>
+                            <div class="form-group checkbox-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: var(--space-md);">
+                                <input type="checkbox" id="privacy_consent" name="privacy_consent" required style="width: auto; margin-top: 4px;">
+                                <label for="privacy_consent" style="font-size: 14px; opacity: 0.85; cursor: pointer; user-select: none;">
+                                    I consent to WeeGROW storing my contact details to follow up on my enquiry in accordance with their privacy guidelines.
+                                </label>
+                                <div class="error-msg"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span class="spinner"></span>
+                                <span class="btn-text">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div
+                        style="background-color: rgba(0, 200, 150, 0.1); border: 1px solid var(--color-accent); border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md); margin-top: var(--space-md); text-align: center;">
+                        <p style="margin: 0; font-size: 14px; color: var(--color-accent); font-weight: 600;">We respond
+                            within 4 hours on business days ⏱</p>
+                    </div>
+                </div>
+
+                <div class="contact-sidebar reveal" data-delay="200">
+                    <div class="card"
+                        style="background-color: var(--color-whatsapp); border: none; text-align: center; margin-bottom: var(--space-lg); padding: var(--space-lg);">
+                        <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: white; margin: 0 auto 10px;">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <h3 style="color: white; margin-bottom: 10px;">Fastest way to reach us</h3>
+                        <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="btn"
+                            style="background-color: white; color: var(--color-whatsapp); width: 100%;" target="_blank"
+                            rel="noopener noreferrer">Chat on WhatsApp &rarr;</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Email Address</h4>
+                        <p><a href="mailto:grow@weegrow.in">grow@weegrow.in</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Phone Number</h4>
+                        <p><a href="tel:+918828965062">+91 88289 65062 / +91 88796 81085</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>Level 3, Neo Vikram, New Link Road,<br>Andheri West, Mumbai 400058</p>
+                    </div>
+                    <!-- Google Maps Embed -->
+                    <div class="map-placeholder" style="margin-top: var(--space-md);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.7562692258836!2d72.83151811538356!3d19.13636258705303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63b2c21966d%3A0xc6eb91dc571876e5!2sNeo%20Vikram!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                            width="100%" height="250" style="border:0; border-radius: var(--radius-md);"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo">
+                    <div class="logo-wrapper">
+                        <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+                        <div class="logo-subtitle">Secure Web Solutions for Modern Business</div>
+                    </div>
+                </a>
+                <p style="margin-top: 10px;">Affordable Websites for Any Business Ready to Grow Online.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Website Development</a></li>
+                    <li><a href="services.html">WhatsApp E-Commerce</a></li>
+                    <li><a href="services.html">SEO & Google Ranking</a></li>
+                    <li><a href="services.html">Google My Business Setup</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" target="_blank"
+                            rel="noopener noreferrer">WhatsApp Us</a></li>
+                    <li><a href="mailto:grow@weegrow.in">grow@weegrow.in</a></li>
+                    <li><a href="tel:+918828965062">+91 88289 65062 / +91 88796 81085</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 WeeGROW · Founded by Harshad Chopra & Daksh Chopra · Mumbai, India<br>Made with ❤ for any business ready to grow online</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="floating-wa"
+        aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+    <button id="backToTop" class="back-to-top" aria-label="Scroll to top">↑</button>
+
+    <script src="js/main.js" type="module"></script>
+    <script src="js/form.js" type="module"></script>
+
+    <!-- Modern Realistic Inertia Scroll (Lenis) -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+    <script>
+        // Initialize modern inertia smooth scroll
+        window.lenis = new Lenis({
+            duration: 1.1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            smoothTouch: false,
+        });
+
+        function raf(time) {
+            window.lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Add scroll binding to custom anchor links for perfect scrolling integration
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    window.lenis.scrollTo(targetEl, {
+                        offset: -80, // Avoid navbar overlapping
+                        immediate: false
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
