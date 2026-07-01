@@ -38,15 +38,15 @@ if (cinematicPreloader && typeof gsap !== 'undefined') {
     });
 
     // 1. Progress line loads immediately
-    tl.to('.cinematic-progress', { width: '100%', duration: 2.2, ease: 'power2.inOut' })
+    tl.to('.cinematic-progress', { width: '100%', duration: 1.0, ease: 'power2.inOut' })
       // 2. Light bloom fades in
-      .to('.cinematic-light-bloom', { opacity: 1, scale: 1.5, duration: 1.5, ease: 'power2.out' }, 0)
+      .to('.cinematic-light-bloom', { opacity: 1, scale: 1.3, duration: 0.8, ease: 'power2.out' }, 0)
       // 3. Logo pops and fades in
-      .to('.cinematic-logo-container', { opacity: 1, scale: 1, duration: 1.2, ease: 'power3.out' }, 0.4)
+      .to('.cinematic-logo-container', { opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out' }, 0.2)
       // 4. Tagline slides up
-      .to('.cinematic-tagline', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.8)
+      .to('.cinematic-tagline', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.4)
       // 5. Entire fullscreen container fades to transparent revealing website
-      .to(cinematicPreloader, { opacity: 0, duration: 0.8, ease: 'power2.inOut', delay: 0.5 });
+      .to(cinematicPreloader, { opacity: 0, duration: 0.4, ease: 'power2.inOut', delay: 0.2 });
 } else {
     // If no preloader or GSAP not present, trigger immediately
     if (cinematicPreloader) cinematicPreloader.style.display = 'none';
