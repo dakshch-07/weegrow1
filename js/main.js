@@ -12,6 +12,35 @@ function triggerAnimations() {
     }
 }
 
+// Helper to animate hero content smoothly after preloader
+function animateHero() {
+    if (typeof gsap !== 'undefined') {
+        const tlHero = gsap.timeline();
+        tlHero.to('.hero-content .mask-in', {
+            y: 0,
+            duration: 1.0,
+            stagger: 0.15,
+            ease: 'power4.out'
+        });
+        tlHero.to('.hero-content .fade-up', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out'
+        }, 0.3);
+    } else {
+        // Fallback in case GSAP fails to load
+        document.querySelectorAll('.mask-in').forEach(el => {
+            el.style.transform = 'translateY(0)';
+        });
+        document.querySelectorAll('.fade-up').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    }
+}
+
 // Cinematic GSAP Preloader Logic
 const cinematicPreloader = document.getElementById('wg-cinematic-preloader');
 if (cinematicPreloader && typeof gsap !== 'undefined') {
@@ -23,14 +52,7 @@ if (cinematicPreloader && typeof gsap !== 'undefined') {
             document.body.style.overflow = '';
             
             // Trigger hero animations after preloader finishes
-            gsap.fromTo('.hero-content h1', 
-                { y: 50, opacity: 0, filter: 'blur(10px)' }, 
-                { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1.2, ease: 'power4.out' }
-            );
-            gsap.fromTo('.hero-content p', 
-                { y: 30, opacity: 0 }, 
-                { y: 0, opacity: 1, duration: 1, delay: 0.2, ease: 'power3.out' }
-            );
+            animateHero();
             
             // Initialize main scroll reveals after preloader finishes
             triggerAnimations();
@@ -50,6 +72,7 @@ if (cinematicPreloader && typeof gsap !== 'undefined') {
 } else {
     // If no preloader or GSAP not present, trigger immediately
     if (cinematicPreloader) cinematicPreloader.style.display = 'none';
+    animateHero();
     triggerAnimations();
 }
 
