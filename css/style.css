@@ -1142,3 +1142,133 @@ input.error, select.error, textarea.error { border-color: #FF3366; }
     .luxury-mini-h2 { font-size: 22px !important; }
     .luxury-glass { padding: 15px 25px !important; }
 }
+
+/* ==========================================================================
+   BRAND AUDIT RECOMMENDATIONS STYLING
+   ========================================================================== */
+
+/* ACHIEVEMENTS BANNER */
+.achievements-section {
+    padding: var(--space-lg) 0;
+    background: rgba(11, 15, 25, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.achievement-item {
+    padding: var(--space-sm);
+}
+.achievement-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-cyan);
+    margin-bottom: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.achievement-label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/* TESTIMONIAL STARS AND VERIFIED BADGE */
+.review-stars {
+    color: #FFD700;
+    font-size: 16px;
+    margin-bottom: var(--space-xs);
+    display: flex;
+    gap: 3px;
+}
+.review-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(6, 182, 212, 0.05);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    color: var(--color-cyan);
+    margin-top: var(--space-sm);
+    font-weight: 600;
+}
+
+/* CASE STUDIES LAYOUT IN MODAL */
+.case-study-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-cyan);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--space-md);
+    margin-bottom: 4px;
+}
+.case-study-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+.case-study-result-box {
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+}
+.case-study-result-box h4 {
+    color: var(--color-cyan);
+    font-size: 15px;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+/* TRUST PAGE GRID & HERO */
+.trust-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+@media (min-width: 768px) {
+    .trust-badges-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.trust-badge-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.trust-badge-card:hover {
+    border-color: var(--color-cyan);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.03);
+}
+.trust-badge-icon {
+    font-size: 32px;
+    margin-bottom: var(--space-sm);
+}
+.trust-badge-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--color-text);
+}
+.trust-badge-card p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
