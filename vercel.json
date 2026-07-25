@@ -1,12 +1,16 @@
 {
   "functions": {
-    "admin.php": {
-      "runtime": "vercel-php@0.9.0"
-    },
-    "php/*.php": {
+    "api/*.php": {
       "runtime": "vercel-php@0.9.0"
     }
   },
+  "routes": [
+    { "src": "/admin.php", "dest": "/api/admin.php" },
+    { "src": "/php/contact.php", "dest": "/api/contact.php" },
+    { "src": "/php/csrf.php", "dest": "/api/csrf.php" },
+    { "src": "/php/db.php", "status": 403 },
+    { "src": "/php/mail.php", "status": 403 }
+  ],
   "headers": [
     {
       "source": "/(.*)",
