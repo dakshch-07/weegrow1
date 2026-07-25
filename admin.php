@@ -1,10 +1,29 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start([
+        'cookie_lifetime' => 0,
+        'cookie_path' => '/',
+        'cookie_domain' => '',
+        'cookie_secure' => isset($_SERVER['HTTPS']) || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https'),
+        'cookie_httponly' => true,
+        'cookie_samesite' => 'Lax'
+    ]);
+}
 require_once 'php/db.php';
 
-// 1. Database connection & Auto-seeding
+// Generate admin CSRF token
+if (empty($_SESSION['admin_csrf_token'])) {
+    $_SESSION['admin_csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Database Connection & Health Check
+$db = null;
+$is_db_active = false;
+$error_msg = '';
+
 try {
     $db = DB::getInstance()->getConnection();
+    $is_db_active = true;
     
     // Seed default admin if table is empty
     $stmt = $db->query("SELECT COUNT(*) FROM webgrowth_admin");
@@ -14,51 +33,117 @@ try {
         $stmt->execute(['admin', $default_hash]);
     }
 } catch (Exception $e) {
-    die("Database Connection Error: " . htmlspecialchars($e->getMessage()));
+    error_log("Database connection failure in admin.php: " . $e->getMessage());
+    $error_msg = "Database connection is currently offline. Viewing mode is restricted.";
 }
 
-// 2. Authentication Logic
-$error_msg = '';
+// Rate Limiting Config
+$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+$salt = getenv('IP_SALT') ?: 'default_weegrow_ip_salt_2026!';
+$ip_hash = hash_hmac('sha256', $ip . '_admin_login', $salt);
+$now = time();
+$limit_time = 60; // 1 minute
+$limit_attempts = 5;
+
+// Authentication Logic
 if (isset($_POST['action']) && $_POST['action'] === 'login') {
-    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
-    $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-    if (!empty($username) && !empty($password)) {
-        $stmt = $db->prepare("SELECT * FROM webgrowth_admin WHERE username = ?");
-        $stmt->execute([$username]);
-        $user = $stmt->fetch();
-
-        if ($user && password_verify($password, $user['password_hash'])) {
-            $_SESSION['admin_logged_in'] = true;
-            $_SESSION['admin_user'] = $user['username'];
-            header("Location: admin.php");
-            exit;
-        } else {
-            $error_msg = "Invalid username or password.";
-        }
+    if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['admin_csrf_token'], $_POST['csrf_token'])) {
+        $error_msg = "CSRF token validation failed.";
     } else {
-        $error_msg = "Please enter both fields.";
+        $rate_blocked = false;
+        if ($is_db_active) {
+            $stmt = $db->prepare("SELECT attempts, last_attempt FROM webgrowth_rate_limits WHERE ip_hash = ?");
+            $stmt->execute([$ip_hash]);
+            $rate = $stmt->fetch();
+            
+            if ($rate && ($now - $rate['last_attempt']) < $limit_time && $rate['attempts'] >= $limit_attempts) {
+                $error_msg = "Too many login attempts. Please try again after 60 seconds.";
+                $rate_blocked = true;
+            }
+        }
+        
+        if (!$rate_blocked) {
+            $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+            $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+            if (!empty($username) && !empty($password)) {
+                if ($is_db_active) {
+                    $stmt = $db->prepare("SELECT * FROM webgrowth_admin WHERE username = ?");
+                    $stmt->execute([$username]);
+                    $user = $stmt->fetch();
+
+                    if ($user && password_verify($password, $user['password_hash'])) {
+                        // Regenerate Session ID on login
+                        session_regenerate_id(true);
+                        $_SESSION['admin_logged_in'] = true;
+                        $_SESSION['admin_user'] = $user['username'];
+                        
+                        // Clear rate limits on success
+                        $stmt = $db->prepare("DELETE FROM webgrowth_rate_limits WHERE ip_hash = ?");
+                        $stmt->execute([$ip_hash]);
+
+                        header("Location: admin.php");
+                        exit;
+                    } else {
+                        $error_msg = "Invalid username or password.";
+                    }
+                } else {
+                    $error_msg = "Database connection is offline. Cannot verify credentials.";
+                }
+
+                // Increment Rate Limiting on Failure
+                if ($is_db_active) {
+                    $stmt = $db->prepare("SELECT attempts, last_attempt FROM webgrowth_rate_limits WHERE ip_hash = ?");
+                    $stmt->execute([$ip_hash]);
+                    $rate = $stmt->fetch();
+
+                    if ($rate) {
+                        if (($now - $rate['last_attempt']) < $limit_time) {
+                            $stmt = $db->prepare("UPDATE webgrowth_rate_limits SET attempts = attempts + 1, last_attempt = ? WHERE ip_hash = ?");
+                            $stmt->execute([$now, $ip_hash]);
+                        } else {
+                            $stmt = $db->prepare("UPDATE webgrowth_rate_limits SET attempts = 1, last_attempt = ? WHERE ip_hash = ?");
+                            $stmt->execute([$now, $ip_hash]);
+                        }
+                    } else {
+                        $stmt = $db->prepare("INSERT INTO webgrowth_rate_limits (ip_hash, attempts, last_attempt) VALUES (?, 1, ?)");
+                        $stmt->execute([$ip_hash, $now]);
+                    }
+                }
+            } else {
+                $error_msg = "Please enter both fields.";
+            }
+        }
     }
 }
 
 if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+    if (empty($_GET['csrf_token']) || !hash_equals($_SESSION['admin_csrf_token'], $_GET['csrf_token'])) {
+        die("CSRF token validation failed.");
+    }
     $_SESSION = [];
     session_destroy();
     header("Location: admin.php");
     exit;
 }
 
-// 3. Export CSV Logic
+// Export CSV Logic
 if (isset($_GET['action']) && $_GET['action'] === 'export' && isset($_SESSION['admin_logged_in'])) {
+    if (empty($_GET['csrf_token']) || !hash_equals($_SESSION['admin_csrf_token'], $_GET['csrf_token'])) {
+        die("CSRF token validation failed.");
+    }
+    
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=weegrow_leads_' . date('Ymd_His') . '.csv');
     
     $output = fopen('php://output', 'w');
     fputcsv($output, ['ID', 'Name', 'Email', 'Phone', 'Business Type', 'Package', 'Message', 'Hashed IP', 'Submitted At']);
     
-    $stmt = $db->query("SELECT id, name, email, phone, business_type, package, message, ip_address, submitted_at FROM webgrowth_leads ORDER BY id DESC");
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        fputcsv($output, $row);
+    if ($is_db_active) {
+        $stmt = $db->query("SELECT id, name, email, phone, business_type, package, message, ip_address, submitted_at FROM webgrowth_leads ORDER BY id DESC");
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            fputcsv($output, $row);
+        }
     }
     fclose($output);
     exit;
@@ -66,7 +151,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'export' && isset($_SESSION['a
 
 $is_logged_in = isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true;
 
-// 4. Fetch metrics and leads if logged in
+// Fetch metrics and leads if logged in
 $leads = [];
 $stats = [
     'total' => 0,
@@ -78,54 +163,58 @@ $stats = [
 ];
 
 if ($is_logged_in) {
-    // Search & Filter options
-    $search = isset($_GET['search']) ? trim($_GET['search']) : '';
-    $filter_biz = isset($_GET['biz_type']) ? trim($_GET['biz_type']) : '';
-    $filter_pkg = isset($_GET['package']) ? trim($_GET['package']) : '';
+    if ($is_db_active) {
+        // Search & Filter options
+        $search = isset($_GET['search']) ? trim($_GET['search']) : '';
+        $filter_biz = isset($_GET['biz_type']) ? trim($_GET['biz_type']) : '';
+        $filter_pkg = isset($_GET['package']) ? trim($_GET['package']) : '';
 
-    // Build lead query
-    $query = "SELECT * FROM webgrowth_leads WHERE 1=1";
-    $params = [];
+        // Build lead query
+        $query = "SELECT * FROM webgrowth_leads WHERE 1=1";
+        $params = [];
 
-    if ($search !== '') {
-        $query .= " AND (name LIKE ? OR email LIKE ? OR phone LIKE ? OR message LIKE ?)";
-        $search_param = "%$search%";
-        array_push($params, $search_param, $search_param, $search_param, $search_param);
-    }
-
-    if ($filter_biz !== '') {
-        $query .= " AND business_type = ?";
-        $params[] = $filter_biz;
-    }
-
-    if ($filter_pkg !== '') {
-        $query .= " AND package = ?";
-        $params[] = $filter_pkg;
-    }
-
-    $query .= " ORDER BY id DESC";
-    $stmt = $db->prepare($query);
-    $stmt->execute($params);
-    $leads = $stmt->fetchAll();
-
-    // Calculate metrics
-    $total_stmt = $db->query("SELECT COUNT(*) FROM webgrowth_leads");
-    $stats['total'] = $total_stmt->fetchColumn();
-
-    $pkg_stmt = $db->query("SELECT package, COUNT(*) as count FROM webgrowth_leads GROUP BY package");
-    while ($p_row = $pkg_stmt->fetch()) {
-        $pkg_name = strtolower($p_row['package']);
-        if (strpos($pkg_name, 'starter') !== false) {
-            $stats['starter'] += $p_row['count'];
-        } elseif (strpos($pkg_name, 'growth') !== false) {
-            $stats['growth'] += $p_row['count'];
-        } elseif (strpos($pkg_name, 'scale') !== false) {
-            $stats['scale'] += $p_row['count'];
-        } elseif (strpos($pkg_name, 'premium') !== false) {
-            $stats['premium'] += $p_row['count'];
-        } else {
-            $stats['other'] += $p_row['count'];
+        if ($search !== '') {
+            $query .= " AND (name LIKE ? OR email LIKE ? OR phone LIKE ? OR message LIKE ?)";
+            $search_param = "%$search%";
+            array_push($params, $search_param, $search_param, $search_param, $search_param);
         }
+
+        if ($filter_biz !== '') {
+            $query .= " AND business_type = ?";
+            $params[] = $filter_biz;
+        }
+
+        if ($filter_pkg !== '') {
+            $query .= " AND package = ?";
+            $params[] = $filter_pkg;
+        }
+
+        $query .= " ORDER BY id DESC";
+        $stmt = $db->prepare($query);
+        $stmt->execute($params);
+        $leads = $stmt->fetchAll();
+
+        // Calculate metrics
+        $total_stmt = $db->query("SELECT COUNT(*) FROM webgrowth_leads");
+        $stats['total'] = $total_stmt->fetchColumn();
+
+        $pkg_stmt = $db->query("SELECT package, COUNT(*) as count FROM webgrowth_leads GROUP BY package");
+        while ($p_row = $pkg_stmt->fetch()) {
+            $pkg_name = strtolower($p_row['package']);
+            if (strpos($pkg_name, 'starter') !== false) {
+                $stats['starter'] += $p_row['count'];
+            } elseif (strpos($pkg_name, 'growth') !== false) {
+                $stats['growth'] += $p_row['count'];
+            } elseif (strpos($pkg_name, 'scale') !== false) {
+                $stats['scale'] += $p_row['count'];
+            } elseif (strpos($pkg_name, 'premium') !== false) {
+                $stats['premium'] += $p_row['count'];
+            } else {
+                $stats['other'] += $p_row['count'];
+            }
+        }
+    } else {
+        $error_msg = "Database connection is offline. Showing cached / empty statistics.";
     }
 }
 ?>
@@ -624,7 +713,7 @@ if ($is_logged_in) {
             </div>
             <div class="user-nav">
                 <div class="user-info">Logged in as <strong><?php echo htmlspecialchars($_SESSION['admin_user']); ?></strong></div>
-                <a href="admin.php?action=logout" class="btn">
+                <a href="admin.php?action=logout&csrf_token=<?php echo urlencode($_SESSION['admin_csrf_token']); ?>" class="btn">
                     <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
                     Logout
                 </a>
@@ -632,6 +721,13 @@ if ($is_logged_in) {
         </header>
 
         <main class="container">
+            <?php if (!empty($error_msg)): ?>
+                <div class="error-alert" style="margin-bottom: 2rem; max-width: 100%;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    <?php echo htmlspecialchars($error_msg); ?>
+                </div>
+            <?php endif; ?>
+
             <!-- Metrics Grid -->
             <section class="metrics-grid">
                 <div class="metric-card">
@@ -695,7 +791,7 @@ if ($is_logged_in) {
             <section class="leads-card">
                 <div class="card-header">
                     <span class="card-title">Lead Submissions (<?php echo count($leads); ?> showing)</span>
-                    <a href="admin.php?action=export" class="btn btn-primary">
+                    <a href="admin.php?action=export&csrf_token=<?php echo urlencode($_SESSION['admin_csrf_token']); ?>" class="btn btn-primary">
                         <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                         Export to CSV
                     </a>
@@ -773,6 +869,7 @@ if ($is_logged_in) {
 
                 <form method="POST" action="admin.php">
                     <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['admin_csrf_token']); ?>">
                     
                     <div class="input-group">
                         <label for="username">Username</label>

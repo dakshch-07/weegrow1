@@ -1,4 +1,8 @@
 <?php
+if (basename($_SERVER['SCRIPT_FILENAME']) === 'mail.php') {
+    http_response_code(403);
+    exit('Forbidden');
+}
 class SMTPMailer {
     public static function send($to, $subject, $body, $headers = []) {
         $host = getenv('SMTP_HOST');

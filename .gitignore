@@ -4,3 +4,6 @@ CVS
 .DS_Store
 Thumbs.db
 weegrow_production_optimized.zip
+
+.vercel
+.env*

@@ -1,4 +1,8 @@
 <?php
+if (basename($_SERVER['SCRIPT_FILENAME']) === 'db.php') {
+    http_response_code(403);
+    exit('Forbidden');
+}
 // Secure .env parser
 if (!function_exists('loadEnv')) {
     function loadEnv($path) {
