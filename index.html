@@ -979,6 +979,8 @@
           modalTech.textContent = `Tech Stack: ${tech}`;
           modalWhatsAppBtn.href = `https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20am%20interested%20in%20a%20project%20similar%20to%20${encodeURIComponent(title)}.`;
 
+          if (window.lenis) window.lenis.stop();
+          document.body.style.overflow = 'hidden';
           modal.style.display = 'flex';
           setTimeout(() => {
               modal.classList.add('active');
@@ -991,7 +993,9 @@
       modal.classList.remove('active');
       setTimeout(() => {
           modal.style.display = 'none';
+          document.body.style.overflow = '';
           if (lastActiveElement) lastActiveElement.focus();
+          if (window.lenis) window.lenis.start();
       }, 400);
   };
 
