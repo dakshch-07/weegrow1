@@ -220,7 +220,8 @@ function initMockupCarousel() {
         'urban-light': '0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(0, 0, 0, 0.1)',
         'rose-gold': '0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(255, 180, 180, 0.15)',
         'warm-artistic': '0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(220, 160, 80, 0.15)',
-        'luxury-dark': '0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(184, 134, 11, 0.15)'
+        'luxury-dark': '0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(184, 134, 11, 0.15)',
+        'luxury-charcoal': '0 40px 80px rgba(0,0,0,0.65), 0 0 60px rgba(197, 160, 89, 0.18)'
     };
 
     // Initial URL display transition styling
