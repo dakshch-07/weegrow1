@@ -1096,7 +1096,7 @@ input.error, select.error, textarea.error { border-color: #FF3366; }
     .services-grid { grid-template-columns: repeat(3, 1fr); }
     .packages-grid { grid-template-columns: repeat(4, 1fr); }
     .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
-    .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: 1fr 400px; }
     .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
     .nav-links { display: flex; gap: var(--space-md); }
