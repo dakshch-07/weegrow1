@@ -933,7 +933,7 @@
                 <span class="portfolio-modal-meta-item" id="modalTech">Tech Stack</span>
             </div>
             <div class="portfolio-modal-actions" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: var(--space-md);">
-                <a href="#" class="btn btn-primary" id="modalLiveBtn" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 180px; justify-content: center;">Visit Live Website ↗</a>
+                <a href="javascript:void(0)" class="btn btn-primary" id="modalLiveBtn" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 180px; justify-content: center; cursor: pointer;">Visit Live Website ↗</a>
                 <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!" class="btn btn-secondary" id="modalWhatsAppBtn" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 180px; justify-content: center;">Discuss Similar Project &rarr;</a>
             </div>
         </div>
@@ -971,12 +971,13 @@
   
   // Add scroll binding to custom anchor links for perfect scrolling integration
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    if (anchor.id === 'modalLiveBtn' || anchor.id === 'modalWhatsAppBtn' || anchor.closest('#portfolioModal')) return;
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href');
-      if(targetId === '#') return;
+      if(!targetId || targetId === '#' || targetId === '#!' || !targetId.startsWith('#')) return;
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
+        e.preventDefault();
         window.lenis.scrollTo(targetEl, {
           offset: -80, // Avoid navbar overlapping
           immediate: false
@@ -1013,6 +1014,17 @@
       }, { passive: true });
   }
 
+  if (modalLiveBtn) {
+      modalLiveBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const targetUrl = this.getAttribute('data-href') || this.href;
+          if (targetUrl && !targetUrl.startsWith('javascript:') && targetUrl !== '#') {
+              window.open(targetUrl, '_blank', 'noopener,noreferrer');
+              e.preventDefault();
+          }
+      });
+  }
+
   document.querySelectorAll('.portfolio-overlay').forEach(btn => {
       btn.addEventListener('click', function(e) {
           e.preventDefault();
@@ -1043,8 +1055,11 @@
           if (modalLiveBtn) {
               if (liveUrl) {
                   modalLiveBtn.href = liveUrl;
+                  modalLiveBtn.setAttribute('data-href', liveUrl);
                   modalLiveBtn.style.display = 'inline-flex';
               } else {
+                  modalLiveBtn.removeAttribute('data-href');
+                  modalLiveBtn.href = 'javascript:void(0)';
                   modalLiveBtn.style.display = 'none';
               }
           }
