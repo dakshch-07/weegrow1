@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Client Projects & Case Studies | WeeGROW Mumbai</title>
+    <meta name="description" content="Explore custom web applications, luxury portals, and high-conversion e-commerce systems engineered by WeeGROW for leading businesses across Mumbai.">
+    <link rel="canonical" href="https://weegrow.in/projects.html">
+    <meta property="og:title" content="Featured Client Projects & Case Studies | WeeGROW Mumbai">
+    <meta property="og:description" content="Explore custom web applications, luxury portals, and high-conversion e-commerce systems engineered by WeeGROW.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weegrow.in/projects.html">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-wrapper">
+                <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+                <div class="logo-subtitle">Secure Web Solutions for Modern Business</div>
+            </div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20saw%20your%20projects%20and%20want%20to%20discuss%20a%20new%20build." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Us &rarr;</a>
+        </div>
+        
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay">
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+        <a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!%20I%20saw%20your%20projects%20and%20want%20to%20discuss%20a%20new%20build." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Us &rarr;</a>
+    </div>
+</div>
+
+<header class="hero" style="min-height: auto; padding-top: 130px; padding-bottom: 30px;">
+    <div class="container projects-header-wrapper">
+        <div class="mask-container">
+            <p class="hero-label mask-in" style="animation-delay: 0s">✦ Portfolio & Case Studies</p>
+        </div>
+        <h1 class="hero-h1 reveal" style="margin-bottom: 16px;">
+            Client Work That <span class="gradient-text">Delivers Real Results</span>
+        </h1>
+        <p class="reveal" data-delay="100" style="max-width: 640px; margin: 0 auto; font-size: 16px; line-height: 1.6;">
+            From high-conversion rental engines and wealth platforms to luxury real estate PWAs — explore custom digital systems we've engineered across Mumbai.
+        </p>
+    </div>
+</header>
+
+<section id="projects-section" style="padding-top: 10px; padding-bottom: var(--space-xxl);">
+    <div class="container">
+        
+        <!-- Category Filter Pills -->
+        <div class="projects-filter-bar reveal" data-delay="100">
+            <button class="project-filter-pill active" data-filter="all">All Projects (10)</button>
+            <button class="project-filter-pill" data-filter="rentals">Fleet & Rentals</button>
+            <button class="project-filter-pill" data-filter="finance">Wealth Advisory</button>
+            <button class="project-filter-pill" data-filter="real-estate">Real Estate & PWA</button>
+            <button class="project-filter-pill" data-filter="experience">Experience Studio</button>
+            <button class="project-filter-pill" data-filter="ecommerce">E-Commerce & Food</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-page-grid" id="projectsGrid">
+            
+            <!-- Project 1: Mumbykers -->
+            <div class="card project-card-item reveal" data-category="rentals" data-delay="100">
+                <div class="project-card-visual">
+                    <img src="assets/mumbykers.png" alt="Mumbykers — Bike Rental Platform" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Fleet & Rental</span>
+                        <span class="project-card-timeline">14 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Mumbykers — Mumbai</h3>
+                    <p class="project-card-tags">React (Vite) · PayU India · 24h Availability Engine</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Mumbykers — Premium Bike Rental" 
+                            data-category="Fleet Booking & Rental Platform" 
+                            data-image="assets/mumbykers.png" 
+                            data-live-url="https://www.mumbykers.in"
+                            data-timeline="14 Business Days" 
+                            data-tech="React (Vite), Tailwind CSS, Framer Motion, Node.js / Vercel Serverless, PayU India SHA-512, PHP / MySQL, SEO Schema" 
+                            data-description="Mumbykers is Mumbai's leading two-wheeler rental and fleet management platform offering riders 24-hour cycle bookings, instant availability lookups, doorstep deliveries, and automated advance token deposits."
+                            data-challenge="The brand needed a modern, mobile-first booking platform to replace manual WhatsApp inquiries with real-time 24-hour cycle availability checks, security deposit calculations, and instant online token checkout without payment drop-offs."
+                            data-solution="We engineered a high-converting full-stack platform featuring custom availability date/time calculators, seamless WhatsApp booking triggers, and enterprise-grade PayU payment gateway integration with cryptographic SHA-512 reverse-hash verification."
+                            data-result="1-Click booking engine with zero checkout drop-offs, automated advance token collection, and sub-second page performance.">Case Study &rarr;</button>
+                        <a href="https://www.mumbykers.in" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Your Byke Buddy -->
+            <div class="card project-card-item reveal" data-category="rentals" data-delay="150">
+                <div class="project-card-visual">
+                    <img src="assets/yourbykebuddy.png" alt="Your Byke Buddy" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Bike & Scooty Rental</span>
+                        <span class="project-card-timeline">12 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Your Byke Buddy — Mumbai</h3>
+                    <p class="project-card-tags">React 19 · Paperless KYC · PayU Gateway</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Your Byke Buddy — Two-Wheeler Rentals" 
+                            data-category="Bike & Scooty Rental App" 
+                            data-image="assets/yourbykebuddy.png" 
+                            data-live-url="https://www.yourbykebuddy.com"
+                            data-timeline="12 Business Days" 
+                            data-tech="React 19, Vite, Tailwind CSS, Framer Motion, PHP, MySQL, PayU Gateway, REST APIs" 
+                            data-description="Your Byke Buddy is a high-performance two-wheeler rental platform for Mumbai riders offering scooty and bike rentals from ₹499/day with paperless KYC and instant booking."
+                            data-challenge="The client required a rider-friendly, mobile-first digital experience with automated paperless KYC onboarding, fleet showroom filters, and dynamic duration price estimation."
+                            data-solution="Developed a reactive fleet discovery interface with interactive scooty/bike package selectors, 2-minute paperless WhatsApp KYC verification, and secure server-side PayU payment processing."
+                            data-result="100% Paperless KYC onboarding in under 2 minutes, rapid client acquisition across Mumbai hubs, and smooth mobile conversions.">Case Study &rarr;</button>
+                        <a href="https://www.yourbykebuddy.com" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: SP Financial Services -->
+            <div class="card project-card-item reveal" data-category="finance" data-delay="200">
+                <div class="project-card-visual">
+                    <img src="assets/sp_financials.png" alt="SP Financial Services" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Wealth Advisory</span>
+                        <span class="project-card-timeline">15 Days</span>
+                    </div>
+                    <h3 class="project-card-title">SP Financial Services</h3>
+                    <p class="project-card-tags">Next.js 14 · SIP/EMI Calculators · Local SEO</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="SP Financial Services — Wealth Advisory" 
+                            data-category="Financial Advisory Platform" 
+                            data-image="assets/sp_financials.png" 
+                            data-live-url="https://www.sp-financials.com"
+                            data-timeline="15 Business Days" 
+                            data-tech="Next.js 14, React, Tailwind CSS, Framer Motion, TypeScript, Vercel, LocalBusiness Schema" 
+                            data-description="SP Financial Services is an authoritative wealth management and financial advisory platform for 7x MDRT USA Award-winning consultant Sachin Pandit, trusted by 2,000+ families across Mumbai."
+                            data-challenge="A premier MDRT USA award-winning financial consultant required an authoritative, high-trust digital platform to showcase wealth planning services, calculate investment returns interactively, and drive qualified investor inquiries."
+                            data-solution="Designed a bespoke Ivory & Gold Next.js 14 web application with buttery-smooth Framer Motion interactions, interactive SIP and EMI calculators, direct WhatsApp consultation dispatch, and full LocalBusiness Schema SEO."
+                            data-result="Ranked for 100+ local financial advisory search queries across Mumbai, generating high-intent consultation requests from HNIs.">Case Study &rarr;</button>
+                        <a href="https://www.sp-financials.com" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: WishCraft Realty -->
+            <div class="card project-card-item reveal" data-category="real-estate" data-delay="100">
+                <div class="project-card-visual">
+                    <img src="assets/wishcraft_realty.png" alt="WishCraft Realty" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Luxury Real Estate</span>
+                        <span class="project-card-timeline">18 Days</span>
+                    </div>
+                    <h3 class="project-card-title">WishCraft Realty — Mumbai</h3>
+                    <p class="project-card-tags">PWA App · Meta WhatsApp Cloud API · Leaflet</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="WishCraft Realty — Private Client Portal" 
+                            data-category="Luxury Real Estate Portal & PWA" 
+                            data-image="assets/wishcraft_realty.png" 
+                            data-live-url="https://realty.wishcraftventures.in"
+                            data-timeline="18 Business Days" 
+                            data-tech="Vanilla JS (ES6+ Async), HTML5, CSS3 System, Leaflet.js Maps, PWA, PHP REST APIs, MySQL, Meta WhatsApp Cloud API, Vercel" 
+                            data-description="WishCraft Realty is an exclusive, invitation-only luxury real estate web application and PWA providing high-net-worth clients with instant property discovery, site-visit scheduling, interactive Vastu consultations, and an all-in-one Admin CRM."
+                            data-challenge="An exclusive luxury realty brand needed sub-millisecond property discovery, Vastu consultation integration, and automated client onboarding without the friction of mobile app store downloads."
+                            data-solution="Engineered an instant 0ms load architecture (Promise.any caching), automated Meta WhatsApp Cloud API v20.0 onboarding with interactive [Open App] buttons, dynamic UPI QR modal, Leaflet map geocoding, and a standalone PWA application."
+                            data-result="Zero UI layout shifts, 30-minute slot visit booking board, and standalone PWA experience for high-net-worth property buyers.">Case Study &rarr;</button>
+                        <a href="https://realty.wishcraftventures.in" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: The Artistic Alley -->
+            <div class="card project-card-item reveal" data-category="experience" data-delay="150">
+                <div class="project-card-visual">
+                    <img src="assets/artistic_alley.jpg" alt="The Artistic Alley" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Experience Studio</span>
+                        <span class="project-card-timeline">12 Days</span>
+                    </div>
+                    <h3 class="project-card-title">The Artistic Alley</h3>
+                    <p class="project-card-tags">Immersive UI · Booking System · Local SEO</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="The Artistic Alley — Couples Experience" 
+                            data-category="Experience Studio Website" 
+                            data-image="assets/artistic_alley.jpg" 
+                            data-live-url="https://theartisticalley.com"
+                            data-timeline="12 Business Days" 
+                            data-tech="HTML5, Custom CSS, Vanilla JS, Booking System, Local SEO" 
+                            data-description="The Artistic Alley is Mumbai's premier paint-and-sip experience studio for couples, offering guided art sessions, workshops, and private event bookings."
+                            data-challenge="The studio needed a high-converting, visually stunning web presence that showcases their premium couples painting experience, manages bookings, and builds brand value."
+                            data-solution="We built an immersive, warm-toned responsive website with smooth micro-animations, glassmorphic layout, integrated WhatsApp booking redirects, and optimized Local SEO."
+                            data-result="4.9/5 client rating with 500+ couples booked, 75% increase in online slot reservations, and a premium digital footprint.">Case Study &rarr;</button>
+                        <a href="https://theartisticalley.com" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Wishcraft Ventures -->
+            <div class="card project-card-item reveal" data-category="experience" data-delay="200">
+                <div class="project-card-visual">
+                    <img src="assets/wishcraft_ventures.jpg" alt="Wishcraft Ventures" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Corporate Group</span>
+                        <span class="project-card-timeline">7 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Wishcraft Ventures</h3>
+                    <p class="project-card-tags">Luxury Split Hero · Inertia Scroll · Vite</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Wishcraft Ventures — Corporate Hub" 
+                            data-category="Corporate Multi-Disciplinary SPA" 
+                            data-image="assets/wishcraft_ventures.jpg" 
+                            data-live-url="https://wishcraftventures.in"
+                            data-timeline="7 Business Days" 
+                            data-tech="React.js (Vite), Tailwind CSS, Framer Motion, Swiper.js, Vercel" 
+                            data-description="Wishcraft Ventures is a premium, multi-disciplinary corporate group unifying Real Estate, Event Management, and Advertising under a single luxury brand identity."
+                            data-challenge="The client needed a state-of-the-art Single Page Application (SPA) central hub to showcase diverse business sectors, integrate continuous portfolios, and capture direct leads."
+                            data-solution="We developed a high-fidelity SPA featuring a 3-column split desktop hero grid, inertia scroll showcase tracks, custom lightboxes, and a conversational WhatsApp pre-fill engine."
+                            data-result="100% responsive conformity, lightning-fast edge performance on Vercel, and a custom domain setup under wishcraftventures.in.">Case Study &rarr;</button>
+                        <a href="https://wishcraftventures.in" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: Apnaa Ghar Real Estate -->
+            <div class="card project-card-item reveal" data-category="real-estate" data-delay="100">
+                <div class="project-card-visual">
+                    <img src="assets/apna_real_estate.jpg" alt="Apnaa Ghar Real Estate" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Property Agency</span>
+                        <span class="project-card-timeline">15 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Apnaa Ghar Real Estate</h3>
+                    <p class="project-card-tags">Luxury Layout · Consultation Booking · Local SEO</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Apnaa Ghar Real Estate — Mumbai" 
+                            data-category="Real Estate Portal" 
+                            data-image="assets/apna_real_estate.jpg" 
+                            data-live-url="https://apna-real-estate-two.vercel.app"
+                            data-timeline="15 Business Days" 
+                            data-tech="HTML5, CSS Flexbox, Vanilla JS, Vercel, Local SEO" 
+                            data-description="Apnaa Ghar Real Estate is a premium property agency in Mumbai serving Chembur, Tilak Nagar, Kurla, and Ghatkopar, helping families discover dream homes and investment properties."
+                            data-challenge="The client required a premium, highly responsive real estate portal to showcase high-end listings, build trust via verified reviews, and facilitate direct consultation bookings."
+                            data-solution="We developed a gorgeous luxury-themed website featuring interactive property search, integrated WhatsApp & phone CTAs, customer review highlights, and optimized local SEO."
+                            data-result="58+ Google Reviews with a 4.9 rating, 80% increase in consultation requests, and a lightning-fast deployment on Vercel.">Case Study &rarr;</button>
+                        <a href="https://apna-real-estate-two.vercel.app" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Spice Route -->
+            <div class="card project-card-item reveal" data-category="ecommerce" data-delay="150">
+                <div class="project-card-visual">
+                    <img src="assets/restaurant.webp" alt="Spice Route — Andheri" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Restaurant</span>
+                        <span class="project-card-timeline">10 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Spice Route — Andheri</h3>
+                    <p class="project-card-tags">5-Page Website · Online Menu · GMB Setup</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Spice Route — Andheri" 
+                            data-category="Restaurant Website" 
+                            data-image="assets/restaurant.webp" 
+                            data-live-url="https://spiceroute.in"
+                            data-timeline="10 Business Days" 
+                            data-tech="HTML5, CSS3 Grid, Vanilla JS, GMB Setup" 
+                            data-description="Spice Route is a high-end restaurant in Andheri that needed an online presence to showcase their menu and drive dinner table reservations."
+                            data-challenge="Spice Route needed a clean, fast-loading online menu to reduce dependency on food aggregator apps and increase direct dinner table bookings."
+                            data-solution="We built a customized static site with micro-animations, integrated reservation triggers, and optimized their Google Business Profile."
+                            data-result="+40% Direct table reservations, 2.1x website organic clicks, and reduced third-party booking commissions.">Case Study &rarr;</button>
+                        <a href="https://spiceroute.in" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9: Glamour Studio -->
+            <div class="card project-card-item reveal" data-category="experience" data-delay="200">
+                <div class="project-card-visual">
+                    <img src="assets/salon.webp" alt="Glamour Studio — Bandra" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">Salon & Beauty</span>
+                        <span class="project-card-timeline">10 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Glamour Studio — Bandra</h3>
+                    <p class="project-card-tags">Booking Page · WhatsApp Scheduler · Local SEO</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Glamour Studio — Bandra" 
+                            data-category="Salon & Styling Website" 
+                            data-image="assets/salon.webp" 
+                            data-live-url="https://glamourstudio.in"
+                            data-timeline="10 Business Days" 
+                            data-tech="HTML5, HSL CSS, WhatsApp API, Local SEO" 
+                            data-description="Glamour Studio is a trendy salon in Bandra that was looking for a way to let clients view styling services and book appointments directly."
+                            data-challenge="Glamour Studio was losing salon appointments to competitors because booking required calling during business hours."
+                            data-solution="We engineered a gorgeous custom site with an integrated 24/7 WhatsApp booking scheduler and localized SEO keywords."
+                            data-result="Over 20 automatic new appointments booked monthly and 65% mobile visitor conversions.">Case Study &rarr;</button>
+                        <a href="https://glamourstudio.in" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10: Home Bakes by Priya -->
+            <div class="card project-card-item reveal" data-category="ecommerce" data-delay="250">
+                <div class="project-card-visual">
+                    <img src="assets/bakery.webp" alt="Home Bakes by Priya" loading="lazy">
+                </div>
+                <div class="project-card-body">
+                    <div class="project-card-meta-top">
+                        <span class="project-card-badge">WhatsApp Store</span>
+                        <span class="project-card-timeline">14 Days</span>
+                    </div>
+                    <h3 class="project-card-title">Home Bakes by Priya</h3>
+                    <p class="project-card-tags">Product Catalog · Instant Order Flow · WhatsApp Cart</p>
+                    <div class="project-card-footer-btns">
+                        <button class="btn-details portfolio-overlay-btn" 
+                            data-title="Home Bakes by Priya — Thane" 
+                            data-category="WhatsApp E-Commerce Store" 
+                            data-image="assets/bakery.webp" 
+                            data-live-url="https://priyabakes.in"
+                            data-timeline="14 Business Days" 
+                            data-tech="Vanilla JS Cart, CSS Glassmorphism, WhatsApp API" 
+                            data-description="Priya's artisan home bakery in Thane wanted a clean, budget-friendly way to display her customized cake menu and capture orders without paying marketplace fees."
+                            data-challenge="Priya needed a cost-effective way to list custom bakery orders without paying steep 25%+ commissions to aggregators."
+                            data-solution="We created a lightweight static catalog storefront with a client-side shopping cart sending orders directly to WhatsApp."
+                            data-result="Doubled weekly cake orders, zero marketplace fees, and direct customer relationships built.">Case Study &rarr;</button>
+                        <a href="https://priyabakes.in" class="btn-live" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section style="background: rgba(17, 24, 39, 0.5); border-top: 1px solid var(--color-border); padding: var(--space-xxl) 0;">
+    <div class="container" style="text-align: center; max-width: 700px;">
+        <h2 class="reveal">Have a Project in Mind?</h2>
+        <p class="reveal" data-delay="100" style="margin-bottom: var(--space-lg);">
+            Let's build a fast, high-converting digital platform tailored specifically for your business goals. Free consultation with zero commitment.
+        </p>
+        <div class="reveal" data-delay="200" style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+            <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20would%20like%20to%20discuss%20a%20new%20project." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Start Your Project &rarr;</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <a href="index.html" class="logo">
+                <div class="logo-wrapper">
+                    <div class="logo-text">Wee<span class="blue-grow">GROW</span></div>
+                    <div class="logo-subtitle">Secure Web Solutions for Modern Business</div>
+                </div>
+            </a>
+            <p style="margin-top: 10px;">Affordable Websites for Any Business Ready to Grow Online.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="trust.html">Trust & Safety</a></li>
+                <li><a href="https://www.instagram.com/weegrow_01/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/dakshchopra/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+                <li><a href="services.html">Website Development</a></li>
+                <li><a href="services.html">WhatsApp E-Commerce</a></li>
+                <li><a href="services.html">SEO & Google Ranking</a></li>
+                <li><a href="services.html">Google My Business Setup</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+                <li><a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+                <li><a href="mailto:grow@weegrow.in">grow@weegrow.in</a></li>
+                <li><a href="tel:+918828965062">+91 88289 65062 / +91 88796 81085</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2025 WeeGROW · Founded by Harshad Chopra & Daksh Chopra · Mumbai, India<br>Made with ❤ for any business ready to grow online</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Glassmorphic Portfolio Lightbox Modal -->
+<div id="portfolioModal" class="portfolio-modal" data-lenis-prevent>
+    <div class="portfolio-modal-content" data-lenis-prevent>
+        <button class="portfolio-modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+        <div class="portfolio-modal-media" id="modalMedia"></div>
+        <div class="portfolio-modal-body">
+            <span class="portfolio-modal-cat" id="modalCat">Category</span>
+            <h3 class="portfolio-modal-title" id="modalTitle">Project Title</h3>
+            <p class="portfolio-modal-desc" id="modalDesc">Detailed description...</p>
+            
+            <div class="case-study-title">The Challenge</div>
+            <p class="case-study-text" id="modalChallenge">Challenge details...</p>
+            
+            <div class="case-study-title">Our Solution</div>
+            <p class="case-study-text" id="modalSolution">Solution details...</p>
+            
+            <div class="case-study-result-box">
+                <h4>Key Metrics & Results</h4>
+                <p style="margin-bottom:0; font-size:14px; font-weight:500; color:var(--color-text);" id="modalResult">Result details...</p>
+            </div>
+
+            <div class="portfolio-modal-meta" style="margin-top:var(--space-md);">
+                <span class="portfolio-modal-meta-item" id="modalTimeline">Timeline</span>
+                <span class="portfolio-modal-meta-item" id="modalTech">Tech Stack</span>
+            </div>
+            <div class="portfolio-modal-actions">
+                <a href="javascript:void(0)" class="btn btn-primary" id="modalLiveBtn" target="_blank" rel="noopener noreferrer">Visit Live Website ↗</a>
+                <a href="https://wa.me/918828965062?text=Hi%20WeeGROW!" class="btn btn-secondary" id="modalWhatsAppBtn" target="_blank" rel="noopener noreferrer">Discuss Similar Project &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/918828965062?text=Hi%20WeeGROW%20team!" class="floating-wa" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button id="backToTop" class="back-to-top" aria-label="Scroll to top">↑</button>
+
+<!-- Lenis Smooth Scroll -->
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<script src="js/main.js" type="module"></script>
+
+<script>
+  // Initialize Lenis
+  window.lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    smoothTouch: false,
+    wheelMultiplier: 1.0,
+    touchMultiplier: 1.5
+  });
+  function raf(time) {
+    window.lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Category Filtering Logic
+  const filterPills = document.querySelectorAll('.project-filter-pill');
+  const projectItems = document.querySelectorAll('.project-card-item');
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', function() {
+      filterPills.forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+
+      const selectedFilter = this.getAttribute('data-filter');
+
+      projectItems.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (selectedFilter === 'all' || category === selectedFilter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+
+  // Modal Setup
+  const modal = document.getElementById('portfolioModal');
+  const modalContent = document.querySelector('.portfolio-modal-content');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalCat = document.getElementById('modalCat');
+  const modalMedia = document.getElementById('modalMedia');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalChallenge = document.getElementById('modalChallenge');
+  const modalSolution = document.getElementById('modalSolution');
+  const modalResult = document.getElementById('modalResult');
+  const modalTimeline = document.getElementById('modalTimeline');
+  const modalTech = document.getElementById('modalTech');
+  const modalWhatsAppBtn = document.getElementById('modalWhatsAppBtn');
+  const modalLiveBtn = document.getElementById('modalLiveBtn');
+  const closeBtn = document.getElementById('modalCloseBtn');
+  let lastActiveElement = null;
+
+  if (modalLiveBtn) {
+      modalLiveBtn.addEventListener('click', function(e) {
+          const targetUrl = this.getAttribute('data-href') || this.getAttribute('href');
+          if (targetUrl && !targetUrl.startsWith('javascript:') && targetUrl !== '#') {
+              window.open(targetUrl, '_blank', 'noopener,noreferrer');
+              e.preventDefault();
+          }
+      });
+  }
+
+  document.querySelectorAll('.portfolio-overlay-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          lastActiveElement = document.activeElement;
+          
+          const title = this.getAttribute('data-title');
+          const category = this.getAttribute('data-category');
+          const image = this.getAttribute('data-image');
+          const timeline = this.getAttribute('data-timeline');
+          const tech = this.getAttribute('data-tech');
+          const desc = this.getAttribute('data-description');
+          const challenge = this.getAttribute('data-challenge') || '';
+          const solution = this.getAttribute('data-solution') || '';
+          const result = this.getAttribute('data-result') || '';
+          const liveUrl = this.getAttribute('data-live-url');
+
+          modalTitle.textContent = title;
+          modalCat.textContent = category;
+          modalMedia.style.backgroundImage = `url('${image}')`;
+          modalDesc.textContent = desc;
+          if (modalChallenge) modalChallenge.textContent = challenge;
+          if (modalSolution) modalSolution.textContent = solution;
+          if (modalResult) modalResult.textContent = result;
+          modalTimeline.textContent = `Timeline: ${timeline}`;
+          modalTech.textContent = `Tech Stack: ${tech}`;
+          modalWhatsAppBtn.href = `https://wa.me/918828965062?text=Hi%20WeeGROW!%20I%20am%20interested%20in%20a%20project%20similar%20to%20${encodeURIComponent(title)}.`;
+
+          if (modalLiveBtn) {
+              if (liveUrl) {
+                  modalLiveBtn.href = liveUrl;
+                  modalLiveBtn.setAttribute('data-href', liveUrl);
+                  modalLiveBtn.style.display = 'inline-flex';
+              } else {
+                  modalLiveBtn.removeAttribute('data-href');
+                  modalLiveBtn.href = 'javascript:void(0)';
+                  modalLiveBtn.style.display = 'none';
+              }
+          }
+
+          if (modalContent) modalContent.scrollTop = 0;
+          if (window.lenis) window.lenis.stop();
+          document.body.style.overflow = 'hidden';
+          modal.style.display = 'flex';
+          setTimeout(() => {
+              modal.classList.add('active');
+              if (modalContent) modalContent.scrollTop = 0;
+              if (closeBtn) closeBtn.focus();
+          }, 10);
+      });
+  });
+
+  const closeModal = () => {
+      modal.classList.remove('active');
+      setTimeout(() => {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+          if (modalContent) modalContent.scrollTop = 0;
+          if (lastActiveElement) lastActiveElement.focus();
+          if (window.lenis) window.lenis.start();
+      }, 400);
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (modal) {
+      modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+              closeModal();
+          }
+      });
+  }
+</script>
+</body>
+</html>
