@@ -199,6 +199,14 @@ section { padding: var(--space-xxl) 0; position: relative; }
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
+    .hero {
+        min-height: auto;
+        padding-top: 110px;
+        padding-bottom: 70px;
+    }
+    .hero-cta {
+        margin-bottom: var(--space-xl);
+    }
 }
 
 
@@ -728,7 +736,7 @@ section { padding: var(--space-xxl) 0; position: relative; }
 /* HERO */
 .hero {
     min-height: 100vh; display: flex; align-items: center;
-    padding-top: 100px; position: relative; overflow: hidden;
+    padding-top: 130px; padding-bottom: 100px; position: relative; overflow: hidden;
 }
 .hero::before {
     content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
@@ -746,7 +754,7 @@ section { padding: var(--space-xxl) 0; position: relative; }
 .hero-label::before { content: ''; width: 24px; height: 2px; background: var(--gradient-accent); border-radius: 1px; }
 .hero-h1 { font-weight: 800; line-height: 1.08; letter-spacing: -0.04em; margin-bottom: var(--space-md); }
 .hero-subtitle { font-size: var(--text-lg); color: var(--color-text-muted); max-width: 500px; line-height: 1.6; }
-.hero-cta { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-lg); }
+.hero-cta { display: flex; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-xl); margin-bottom: var(--space-lg); }
 .hero-visual { position: relative; display: block; z-index: 2; perspective: 1000px; }
 
 /* Browser Mockup */
