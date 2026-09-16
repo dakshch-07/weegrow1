@@ -879,9 +879,9 @@
 </footer>
 
 <!-- Glassmorphic Portfolio Lightbox Modal -->
-<div id="portfolioModal" class="portfolio-modal">
-    <div class="portfolio-modal-content">
-        <button class="portfolio-modal-close" id="modalCloseBtn">&times;</button>
+<div id="portfolioModal" class="portfolio-modal" data-lenis-prevent>
+    <div class="portfolio-modal-content" data-lenis-prevent>
+        <button class="portfolio-modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
         <div class="portfolio-modal-media" id="modalMedia"></div>
         <div class="portfolio-modal-body">
             <span class="portfolio-modal-cat" id="modalCat">Category</span>
@@ -970,9 +970,19 @@
   const modalTech = document.getElementById('modalTech');
   const modalWhatsAppBtn = document.getElementById('modalWhatsAppBtn');
   const modalLiveBtn = document.getElementById('modalLiveBtn');
+  const modalContent = modal ? modal.querySelector('.portfolio-modal-content') : null;
   let lastActiveElement = null;
 
   const focusableElementsString = 'button, [href], input, select, textarea, [tabindex="0"]';
+
+  if (modalContent) {
+      modalContent.addEventListener('wheel', function(e) {
+          e.stopPropagation();
+      }, { passive: true });
+      modalContent.addEventListener('touchmove', function(e) {
+          e.stopPropagation();
+      }, { passive: true });
+  }
 
   document.querySelectorAll('.portfolio-overlay').forEach(btn => {
       btn.addEventListener('click', function(e) {
@@ -1010,11 +1020,14 @@
               }
           }
 
+          if (modalContent) modalContent.scrollTop = 0;
+
           if (window.lenis) window.lenis.stop();
           document.body.style.overflow = 'hidden';
           modal.style.display = 'flex';
           setTimeout(() => {
               modal.classList.add('active');
+              if (modalContent) modalContent.scrollTop = 0;
               if (closeBtn) closeBtn.focus();
           }, 10);
       });
@@ -1025,6 +1038,7 @@
       setTimeout(() => {
           modal.style.display = 'none';
           document.body.style.overflow = '';
+          if (modalContent) modalContent.scrollTop = 0;
           if (lastActiveElement) lastActiveElement.focus();
           if (window.lenis) window.lenis.start();
       }, 400);
